@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Vartistic Studio</title>
+    <meta name="description"
+        content="Contact Vartistic Studio for custom web development, UX/UI, ecommerce builds, and technical SEO projects.">
+    <meta name="keywords" content="contact web agency, start web project, seo consultation, web design quote">
+    <meta property="og:title" content="Contact Vartistic Studio">
+    <meta property="og:description" content="Start a project: web development, UX/UI, ecommerce, and technical SEO.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader-text">VARTISTIC</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Vartistic<span>.</span></div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Our Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team.html">The Squad</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="theme-btn"><span>☀️</span> Mode</button>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-container" data-scroll-container>
+        <section style="padding-top: 150px; text-align: center;" data-scroll-section>
+            <h2 class="section-title" data-scroll data-scroll-speed="0.7">Start Your Project</h2>
+            <p style="margin: 0 auto 50px;" data-scroll data-scroll-speed="0.5">We are ready to bring your vision to
+                life.</p>
+            <div class="process-steps">
+                <div class="step" data-scroll data-scroll-speed="0.9">
+                    <div class="step-icon">1</div>
+                    <h3>Fill The Form</h3>
+                    <p>Tell us about your requirements.</p>
+                </div>
+                <div class="step" data-scroll data-scroll-speed="0.7">
+                    <div class="step-icon">2</div>
+                    <h3>Google Meet</h3>
+                    <p>We schedule a video call.</p>
+                </div>
+                <div class="step" data-scroll data-scroll-speed="0.5">
+                    <div class="step-icon">3</div>
+                    <h3>Finalize & Build</h3>
+                    <p>We start coding your masterpiece.</p>
+                </div>
+            </div>
+            <div class="hero-form-container" style="width: 100%; max-width: 600px; margin: 60px auto 0;" data-scroll
+                data-scroll-speed="0.4">
+                <form class="hero-form" id="contactForm" novalidate>
+                    <input type="text" name="_gotcha"
+                        style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;"
+                        tabindex="-1" aria-hidden="true">
+
+                    <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Business Email" required>
+                    </div>
+                    <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number"></div>
+                    <div class="form-group"><textarea name="message" rows="5" placeholder="Project Details..."
+                            required></textarea></div>
+                    <button type="submit" class="btn-submit">Submit Enquiry</button>
+                    <div class="form-result" aria-live="polite" style="margin-top:12px;"></div>
+                </form>
+            </div>
+        </section>
+
+        <button class="back-to-top">↑</button>
+
+        <footer data-scroll-section>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Vartistic Studio.</h3>
+                    <p>Let's Build Your Vision Together.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="work.html">Our Work</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html">The Squad</a>
+                    <a href="contact.html" class="active">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/vartisticstudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Form submission logic consolidated into script.js -->
+</body>
+
+</html>
