@@ -1,0 +1,65 @@
+<!-- ============================================================
+  COOKIE CONSENT POPUP
+  Paste this entire block just before the closing </body> tag
+  in your index.html (and any other HTML pages).
+  Do NOT modify any existing JS files.
+  ============================================================ -->
+
+<div id="cookie-banner" style="
+  display:none;
+  position:fixed;
+  bottom:0; left:0; right:0;
+  background:#111;
+  border-top:1px solid #222;
+  color:#ccc;
+  padding:1rem 1.5rem;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:0.75rem;
+  font-family:'Segoe UI',Arial,sans-serif;
+  font-size:0.9rem;
+">
+  <p style="margin:0; flex:1; min-width:200px;">
+    🍪 We use cookies to improve your experience and serve personalized ads.
+    By continuing, you agree to our
+    <a href="/privacy-policy.html" style="color:#a78bfa;">Privacy Policy</a>.
+  </p>
+  <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+    <button onclick="denyCookies()" style="
+      background:transparent; border:1px solid #444;
+      color:#aaa; padding:0.5rem 1rem; border-radius:5px;
+      cursor:pointer; font-size:0.9rem;
+    ">Decline</button>
+    <button onclick="acceptCookies()" style="
+      background:#a78bfa; border:none;
+      color:#fff; padding:0.5rem 1.2rem; border-radius:5px;
+      cursor:pointer; font-size:0.9rem; font-weight:600;
+    ">Accept All</button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    var consent = localStorage.getItem('cookie_consent');
+    if (!consent) {
+      banner.style.display = 'flex';
+    }
+  })();
+
+  function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  function denyCookies() {
+    localStorage.setItem('cookie_consent', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+</script>
+<!-- ============================================================
+  END COOKIE CONSENT POPUP
+  ============================================================ -->
