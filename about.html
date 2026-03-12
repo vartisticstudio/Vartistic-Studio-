@@ -1,175 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research- Projects & Tools | Vartistic Studio</title>
-    <meta name="description"
-        content="View 7 recent projects: Website replicas, HTML template edits, custom scratch builds, fast vibe coding projects, and Python automation tools.">
-    <meta name="keywords"
-        content="website replica portfolio, html template edit examples, custom web design, fast web development projects, python tool showcase, website redesign results">
-    <meta property="og:title" content="Our Work | Clones, Edits, Builds & Tools">
-    <meta property="og:description" content="See how we solve problems with code: Replicas, Redesigns, and Automation.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <title>Our Creations | Vartistic Studio</title>
     <link rel="icon" type="image/png" href="images/Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-
 <body>
     
-
     <nav class="navbar">
         <div class="logo">Vartistic<span>.</span></div>
         <div class="nav-right">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Our Work</a></li>
+                <li><a href="work.html" class="active">Our Work</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="team.html">The Squad</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="theme-btn"><span>☀️</span> Mode</button>
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
         </div>
     </nav>
 
     <div id="main-container" data-scroll-container>
-
-        <!-- PARALLAX HEADING SECTION -->
-        <section style="padding-top: 180px;" data-scroll-section>
-            <div class="parallax-header-wrap">
-                <!-- data-scroll-speed makes it move faster/slower than scroll -->
-                <h2 class="parallax-text" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
-                    Recent <span class="highlight">Deliveries</span>
-                </h2>
-                <p style="text-align: center; max-width: 600px; margin: 20px auto 50px; color: var(--text-muted);"
-                    data-scroll data-scroll-speed="1">
-                    A mix of custom builds, fast template edits, and problem-solving tools.
-                </p>
+        
+        <!-- MASSIVE HERO -->
+        <section class="work-hero-creative" data-scroll-section>
+            <div class="hero-bg-dots"></div>
+            <div class="work-title-box" data-scroll data-scroll-speed="2">
+                <span class="eyebrow">Vision</span>
+                <h1 class="giant-text">creative<br><span class="text-gradient">impacts.</span></h1>
             </div>
+        </section>
 
-            <div class="work-grid">
+        <!-- PROJECT 01 - SPLIT IMMERSIVE 
+        <section class="immersive-project" data-scroll-section>
+            <div class="project-split">
+                <div class="project-visual" data-scroll data-scroll-speed="1">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" alt="Arbees World">
+                    <div class="project-year">© 2024</div>
+                </div>
+                <div class="project-info-deep" data-scroll data-scroll-speed="0.5">
+                    <span class="project-num">01</span>
+                    <h2>Arbees World <br> <span class="highlight">Luxury Brand Hub</span></h2>
+                    
+                    <div class="deep-desc">
+                        <div class="desc-block">
+                            <h4>The Challenge</h4>
+                            <p>Arbees World needed more than a website; they needed a digital flagship. The goal was to translate high-end fashion textures and founder stories into a lightning-fast web experience that builds instant premium authority.</p>
+                        </div>
+                        <div class="desc-block">
+                            <h4>The Vartistic Logic</h4>
+                            <p>We implemented custom loading sequences and "Vibe-Coded" the front page to ensure smooth parallax transitions. No builders were used—every div was hand-coded for maximum SEO ranking and zero bloat.</p>
+                        </div>
+                    </div>
 
-                <!-- Project 1 
+                    <div class="project-tags">
+                        <span>UI Architecture</span><span>Performance SEO</span><span>Liquid Animations</span>
+                    </div>
+                    <a href="https://arbeesworld.co.za/" target="_blank" class="magnetic-link">Launch Project ↗</a>
+                </div>
+            </div>
+        </section>
+
+        -->
+
+        <!-- PROJECT 01 - SPLIT IMMERSIVE (REVERSED) -->
+        <section class="immersive-project" data-scroll-section>
+            <div class="project-split reverse">
+                <div class="project-info-deep" data-scroll data-scroll-speed="0.5">
+                    <span class="project-num">01</span>
+                    <h2>Auto-Mailer <br> <span class="highlight">Engine v2.0</span></h2>
+                    
+                    <div class="deep-desc">
+                        <div class="desc-block">
+                            <h4>The Problem</h4>
+                            <p>Manual outreach was killing our client's productivity. They needed a system that could send 10,000+ personalized emails without landing in the spam folder or costing thousands in monthly subscriptions.</p>
+                        </div>
+                        <div class="desc-block">
+                            <h4>The Solution</h4>
+                            <p>A custom Python backend that mimics human typing patterns and rotates SMTP servers dynamically. It includes a built-in Excel validator that cleans the list before sending, ensuring a 98% deliverability rate.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-tags">
+                        <span>Python Automation</span><span>SMTP Logic</span><span>Growth Hacking</span>
+                    </div>
+                    <a href="#" class="magnetic-link">View Documentation ↗</a>
+                </div>
+                <div class="project-visual" data-scroll data-scroll-speed="1">
+                    <img src="images/Emailer UI .png" alt="Automation Engine">
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT 02 - SPLIT IMMERSIVE -->
+        <section class="immersive-project" data-scroll-section>
+            <div class="project-split">
+                <div class="project-visual" data-scroll data-scroll-speed="1">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200" alt="Eatlytic">
+                    <div class="project-year">© 2025</div>
+                </div>
+                <div class="project-info-deep" data-scroll data-scroll-speed="0.5">
+                    <span class="project-num">02</span>
+                    <h2>Eatlytic Intelligent Food Analysis Platform <br> <span class="highlight">Intelligent Food Analyzer</span></h2>
+                    
+                    <div class="deep-desc">
+                        <div class="desc-block">
+                            <h4>The Problem</h4>
+                            <p>Food labels are often confusing and hard to understand. In real life, people buy packaged food thinking it is healthy, but hidden ingredients, excess sugar, or misleading nutrition information make it difficult to know what we are actually consuming.</p>
+                        </div>
+                        <div class="desc-block">
+                            <h4>The Solution</h4>
+                            <p>Eatlytic is an AI prototype that simplifies food transparency. Just snap a photo of a product label, and the system extracts ingredients, analyzes nutritional values, and highlights hidden health risks or benefits—helping people make smarter food choices instantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-tags">
+                        <span>AI Prototype</span><span>Vision API</span><span>Live Search</span>
+                    </div>
+                    <a href="#" class="magnetic-link">Product Feedback Coming Soon ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE FUTURE LAB (COMING SOON) -->
+        <section class="future-lab-blueprint" data-scroll-section>
+            <div class="lab-grid-overlay"></div>
+            <h2 class="section-title">The <span class="highlight">Lab</span> Blueprints</h2>
+            <p class="lab-subtitle">Internal R&D projects currently in the oven.</p>
+
+            <div class="blueprint-container">
+                <!-- LAB ITEM 1 
+                <div class="blueprint-item" data-scroll>
+                    <div class="bp-header">
+                        <span class="status pulse-yellow">In Development</span>
+                        <span class="bp-code">ID: NEXUS-OS</span>
+                    </div>
+                    <h3>Nexus Portfolio OS</h3>
+                    <p>We are building a web-based Operating System. Imagine a portfolio where the user can drag windows, change wallpapers, and open "apps" to see your work. A total breakthrough in user interaction.</p>
+                    <div class="bp-footer">
+                        <div class="tech-stack"><span>React</span><span>GSAP</span><span>Three.js</span></div>
+                        <div class="completion">85%</div>
+                    </div>
+                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 85%;"></div></div>
+                </div>
+
+               
+                <div class="blueprint-item" data-scroll>
+                    <div class="bp-header">
+                        <span class="status">Research Phase</span>
+                        <span class="bp-code">ID: VART-VISION</span>
+                    </div>
+                    <h3>Vartiss AI Scraper</h3>
+                    <p>An intelligent tool designed to monitor competitor price changes and aesthetic updates across 50+ websites simultaneously, delivering a daily PDF report to your Slack.</p>
+                    <div class="bp-footer">
+                        <div class="tech-stack"><span>Python</span><span>OpenAI API</span><span>Selenium</span></div>
+                        <div class="completion">20%</div>
+                    </div>
+                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 20%;"></div></div>
+                </div>
+
+            -->
+
+
+
+
+            <!-- LAB ITEM 1 - EMAIL AUTOMATIC SENDER -->
+                <div class="blueprint-item" data-scroll>
+                    <div class="bp-header">
+                        <span class="status pulse-green">Ready</span>
+                        <span class="bp-code">ID: EMAIL-AUTO-SYS</span>
+                    </div>
+                    <h3>Email Automatic Sender System</h3>
+                    
+                    <div class="bp-footer">
+                        <div class="tech-stack"><span>Python</span><span>SMTP</span><span>Excel Integration</span><span>Automation</span></div>
+                        <div class="completion">100%</div>
+                    </div>
+                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 100%;"></div></div>
+                </div>
+
+                <!-- LAB ITEM 2 - EATYLYTIC -->
+                <div class="blueprint-item" data-scroll>
+                    <div class="bp-header">
+                        <span class="status pulse-yellow">Coming Soon</span>
+                        <span class="bp-code">ID: EATYLYTIC-AI</span>
+                    </div>
+                    <h3>Eatylytic – Intelligent Food Analyzer</h3>
+                   
+                    <div class="bp-footer">
+                        <div class="tech-stack"><span>Vision API</span><span>Google Search</span><span>AI Algorithm</span></div>
+                        <div class="completion">60%</div>
+                    </div>
+                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 60%;"></div></div>
+                </div>
 
                 
-                <div class="work-card" data-scroll data-scroll-speed="0.9">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600"
-                        alt="Arbees World Brand Website" class="work-thumb">
-                    <div class="work-info">
-                        <h3>Arbees World – Brand Website</h3>
-                        <p><strong>Service:</strong> UI Design & Frontend Development<br><strong>Job:</strong> Designed
-                            and developed the index page, founder page, and a custom loading animation. Focused on clean
-                            UI, smooth user flow, strong brand storytelling, consistent colors, professional typography,
-                            and performance optimization to build trust and credibility.</p>
-                        <div class="review-box">"The clean design and storytelling gave the brand a professional and
-                            trustworthy presence."
-                            <span class="review-author">— Fashion Startup Founder</span>
-                        </div>
-                        <a href="https://arbeesworld.co.za/" target="_blank" class="cta-btn secondary"
-                            style="margin-top: 20px; display: inline-block; padding: 10px 20px; font-size: 0.8rem;">View
-                            Website ↗</a>
-                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 20px;">Made by syed shoaib</p>
-                    </div>
-                </div>
-
-                 -->
-
-
-                <!-- Project 2 -->
-                <div class="work-card" data-scroll data-scroll-speed="0.7">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600"
-                        alt="Eatlytic Intelligent Food Analysis Platform" class="work-thumb">
-                    <div class="work-info">
-                        <h3>Eatlytic – Intelligent Food Analyzer</h3>
-                        <p>
-                            <strong> What it is:</strong> Eatlytic is a next-gen AI prototype that decodes complex food
-                            labels to reveal their true nutritional and health impact.<br>
-                            <strong>How it works:</strong> Snap a photo of any back label. The system instantly extracts
-                            the ingredients, verifies macros (like protein), and flags hidden health cautions or
-                            benefits.<br>
-                            <strong>How we made it:</strong> We engineered a dynamic AI research pipeline. Vision APIs
-                            extract the raw label text, triggering a live Google Search to gather real-time data on
-                            complex ingredients. Our custom algorithm then synthesizes this live research into a clear,
-                            personalized health breakdown.
-                        </p>
-                        <div class="review-box">An incredibly smart use of live search and Vision AI to make complex
-                            nutrition totally transparent." — Product Feedback</div>
-                        <a href="#" target="_blank" class="cta-btn primary"
-                            style="margin-top: 20px; display: inline-block; padding: 10px 20px; font-size: 0.8rem; color: #ffffff;">Coming
-                            Soon </a>
-                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 20px;">Made by Vartistic
-                            Studio</p>
-                    </div>
-                </div>
-
-
-                <!-- Project 3 -->
-                <div class="work-card" data-scroll data-scroll-speed="0.8">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600"
-                        alt="Email Automatic Sender System" class="work-thumb">
-                    <div class="work-info">
-                        <h3>Email Automatic Sender System</h3>
-                        <p><strong>Service:</strong> Automation Tool Development<br><strong>Job:</strong> Developed a
-                            fully automated bulk email sender with Excel/CSV import, personalized content, attachment
-                            support, spam-risk analysis, duplicate prevention, and email history tracking for reliable
-                            and efficient email campaigns.</p>
-                        <div class="review-box">"The automation saved time and ensured smooth, professional email
-                            delivery."</div>
-                        <a href="#" target="_blank" class="cta-btn primary"
-                            style="margin-top: 20px; display: inline-block; padding: 10px 20px; font-size: 0.8rem; color: #ffffff;">
-                            Ready </a>
-                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 20px;">Made by Vartistic
-                            Studio</p>
-                    </div>
-                </div>
-
-
             </div>
         </section>
 
-        <section class="cta-banner" data-scroll-section>
-            <div data-scroll data-scroll-speed="1">
-                <h2>Ready to Start?</h2>
-                <p>Whether it's a Replica, a Template Edit, or a Custom Build.</p>
-                <a href="contact.html" class="cta-btn primary" style="margin-top: 20px; display: inline-block;">Get a
-                    Quote</a>
-            </div>
-        </section>
-
-        <button class="back-to-top">↑</button>
-
+        <!-- FOOTER (Same as other pages) -->
         <footer data-scroll-section>
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>Vartistic Studio.</h3>
-                    <p>Solving problems with code.</p>
+                    <p>Creative Minds. Obsessive Builders.</p>
                 </div>
                 <div class="footer-links">
                     <a href="index.html">Home</a>
-                    <a href="about.html">Our Work</a>
+                    <a href="work.html" class="active">Our Work</a>
                     <a href="services.html">Services</a>
                     <a href="team.html">The Squad</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank"
-                        rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://www.instagram.com/vartisticstudio" target="_blank"
-                        rel="noopener noreferrer">Instagram</a>
-                    <a href="#">Twitter</a>
+                    <a href="https://www.linkedin.com/company/vartisticstudio/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/vartisticstudio" target="_blank">Instagram</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Vartistic Studio. All Rights Reserved.</p>
+                <p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p>
             </div>
         </footer>
     </div>
@@ -177,7 +232,4 @@
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="script.js"></script>
 </body>
-
-
-
 </html>
