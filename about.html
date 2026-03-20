@@ -10,16 +10,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    
     <nav class="navbar">
         <div class="logo">Vartistic<span>.</span></div>
         <div class="nav-right">
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="work.html" class="active">Our Work</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="team.html">The Squad</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about" class="active">About Us</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/team">The Squad</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
             <button class="theme-btn"><span>☀️</span> Mode</button>
             <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
@@ -27,8 +27,6 @@
     </nav>
 
     <div id="main-container" data-scroll-container>
-        
-        <!-- MASSIVE HERO -->
         <section class="work-hero-creative" data-scroll-section>
             <div class="hero-bg-dots"></div>
             <div class="work-title-box" data-scroll data-scroll-speed="2">
@@ -37,45 +35,11 @@
             </div>
         </section>
 
-        <!-- PROJECT 01 - SPLIT IMMERSIVE 
-        <section class="immersive-project" data-scroll-section>
-            <div class="project-split">
-                <div class="project-visual" data-scroll data-scroll-speed="1">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" alt="Arbees World">
-                    <div class="project-year">© 2024</div>
-                </div>
-                <div class="project-info-deep" data-scroll data-scroll-speed="0.5">
-                    <span class="project-num">01</span>
-                    <h2>Arbees World <br> <span class="highlight">Luxury Brand Hub</span></h2>
-                    
-                    <div class="deep-desc">
-                        <div class="desc-block">
-                            <h4>The Challenge</h4>
-                            <p>Arbees World needed more than a website; they needed a digital flagship. The goal was to translate high-end fashion textures and founder stories into a lightning-fast web experience that builds instant premium authority.</p>
-                        </div>
-                        <div class="desc-block">
-                            <h4>The Vartistic Logic</h4>
-                            <p>We implemented custom loading sequences and "Vibe-Coded" the front page to ensure smooth parallax transitions. No builders were used—every div was hand-coded for maximum SEO ranking and zero bloat.</p>
-                        </div>
-                    </div>
-
-                    <div class="project-tags">
-                        <span>UI Architecture</span><span>Performance SEO</span><span>Liquid Animations</span>
-                    </div>
-                    <a href="https://arbeesworld.co.za/" target="_blank" class="magnetic-link">Launch Project ↗</a>
-                </div>
-            </div>
-        </section>
-
-        -->
-
-        <!-- PROJECT 01 - SPLIT IMMERSIVE (REVERSED) -->
         <section class="immersive-project" data-scroll-section>
             <div class="project-split reverse">
                 <div class="project-info-deep" data-scroll data-scroll-speed="0.5">
                     <span class="project-num">01</span>
                     <h2>Auto-Mailer <br> <span class="highlight">Engine v2.0</span></h2>
-                    
                     <div class="deep-desc">
                         <div class="desc-block">
                             <h4>The Problem</h4>
@@ -86,7 +50,6 @@
                             <p>A custom Python backend that mimics human typing patterns and rotates SMTP servers dynamically. It includes a built-in Excel validator that cleans the list before sending, ensuring a 98% deliverability rate.</p>
                         </div>
                     </div>
-
                     <div class="project-tags">
                         <span>Python Automation</span><span>SMTP Logic</span><span>Growth Hacking</span>
                     </div>
@@ -98,7 +61,6 @@
             </div>
         </section>
 
-        <!-- PROJECT 02 - SPLIT IMMERSIVE -->
         <section class="immersive-project" data-scroll-section>
             <div class="project-split">
                 <div class="project-visual" data-scroll data-scroll-speed="1">
@@ -108,7 +70,6 @@
                 <div class="project-info-deep" data-scroll data-scroll-speed="0.5">
                     <span class="project-num">02</span>
                     <h2>Eatlytic Intelligent Food Analysis Platform <br> <span class="highlight">Intelligent Food Analyzer</span></h2>
-                    
                     <div class="deep-desc">
                         <div class="desc-block">
                             <h4>The Problem</h4>
@@ -119,7 +80,6 @@
                             <p>Eatlytic is an AI prototype that simplifies food transparency. Just snap a photo of a product label, and the system extracts ingredients, analyzes nutritional values, and highlights hidden health risks or benefits—helping people make smarter food choices instantly.</p>
                         </div>
                     </div>
-
                     <div class="project-tags">
                         <span>AI Prototype</span><span>Vision API</span><span>Live Search</span>
                     </div>
@@ -128,104 +88,55 @@
             </div>
         </section>
 
-        <!-- THE FUTURE LAB (COMING SOON) -->
         <section class="future-lab-blueprint" data-scroll-section>
             <div class="lab-grid-overlay"></div>
             <h2 class="section-title">The <span class="highlight">Lab</span> Blueprints</h2>
             <p class="lab-subtitle">Internal R&D projects currently in the oven.</p>
-
             <div class="blueprint-container">
-                <!-- LAB ITEM 1 
-                <div class="blueprint-item" data-scroll>
-                    <div class="bp-header">
-                        <span class="status pulse-yellow">In Development</span>
-                        <span class="bp-code">ID: NEXUS-OS</span>
-                    </div>
-                    <h3>Nexus Portfolio OS</h3>
-                    <p>We are building a web-based Operating System. Imagine a portfolio where the user can drag windows, change wallpapers, and open "apps" to see your work. A total breakthrough in user interaction.</p>
-                    <div class="bp-footer">
-                        <div class="tech-stack"><span>React</span><span>GSAP</span><span>Three.js</span></div>
-                        <div class="completion">85%</div>
-                    </div>
-                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 85%;"></div></div>
-                </div>
-
-               
-                <div class="blueprint-item" data-scroll>
-                    <div class="bp-header">
-                        <span class="status">Research Phase</span>
-                        <span class="bp-code">ID: VART-VISION</span>
-                    </div>
-                    <h3>Vartiss AI Scraper</h3>
-                    <p>An intelligent tool designed to monitor competitor price changes and aesthetic updates across 50+ websites simultaneously, delivering a daily PDF report to your Slack.</p>
-                    <div class="bp-footer">
-                        <div class="tech-stack"><span>Python</span><span>OpenAI API</span><span>Selenium</span></div>
-                        <div class="completion">20%</div>
-                    </div>
-                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 20%;"></div></div>
-                </div>
-
-            -->
-
-
-
-
-            <!-- LAB ITEM 1 - EMAIL AUTOMATIC SENDER -->
                 <div class="blueprint-item" data-scroll>
                     <div class="bp-header">
                         <span class="status pulse-green">Ready</span>
                         <span class="bp-code">ID: EMAIL-AUTO-SYS</span>
                     </div>
                     <h3>Email Automatic Sender System</h3>
-                    
                     <div class="bp-footer">
                         <div class="tech-stack"><span>Python</span><span>SMTP</span><span>Excel Integration</span><span>Automation</span></div>
                         <div class="completion">100%</div>
                     </div>
                     <div class="bp-progress-bar"><div class="bp-fill" style="width: 100%;"></div></div>
                 </div>
-
-                <!-- LAB ITEM 2 - EATYLYTIC -->
                 <div class="blueprint-item" data-scroll>
                     <div class="bp-header">
                         <span class="status pulse-yellow">Coming Soon</span>
                         <span class="bp-code">ID: EATYLYTIC-AI</span>
                     </div>
                     <h3>Eatylytic – Intelligent Food Analyzer</h3>
-                   
                     <div class="bp-footer">
                         <div class="tech-stack"><span>Vision API</span><span>Google Search</span><span>AI Algorithm</span></div>
                         <div class="completion">60%</div>
                     </div>
                     <div class="bp-progress-bar"><div class="bp-fill" style="width: 60%;"></div></div>
                 </div>
-
-                
             </div>
         </section>
 
-        <!-- FOOTER (Same as other pages) -->
         <footer data-scroll-section>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Vartistic Studio.</h3>
-                    <p>Creative Minds. Obsessive Builders.</p>
-                </div>
+                <div class="footer-brand"><h3>Vartistic Studio.</h3><p>Creative Minds. Obsessive Builders.</p></div>
                 <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="work.html" class="active">Our Work</a>
-                    <a href="services.html">Services</a>
-                    <a href="team.html">The Squad</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="/">Home</a>
+                    <a href="/about" class="active">About Us</a>
+                    <a href="/work">Our Work</a>
+                    <a href="/services">Services</a>
+                    <a href="/team">The Squad</a>
+                    <a href="/contact">Contact</a>
                 </div>
                 <div class="footer-socials">
                     <a href="https://www.linkedin.com/company/vartisticstudio/" target="_blank">LinkedIn</a>
                     <a href="https://www.instagram.com/vartisticstudio" target="_blank">Instagram</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p></div>
         </footer>
     </div>
 
