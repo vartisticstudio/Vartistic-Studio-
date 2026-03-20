@@ -1380,19 +1380,49 @@ footer { padding: 80px 5% 40px; background: var(--bg-card); border-top: 1px soli
     .template-grid { grid-template-columns: 1fr; max-width: 450px; margin: 40px auto 0; }
     .project-details { padding: 35px 25px; }
 }
-
 /* Extra Small Phones (480px) */
 @media (max-width: 480px) {
     .address-bar { display: none; }
     .project-details h3 { font-size: 1.7rem; }
     .navbar { padding: 15px 5%; }
-   
+
     /* Footer Responsive Fix */
-    footer { padding: 60px 5% 30px; }
-    .footer-content { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
-    .footer-brand, .footer-links, .footer-socials { width: 100%; }
-    .footer-links { display: flex; flex-direction: column; gap: 10px; align-items: center; }
-    .footer-socials { display: flex; justify-content: center; gap: 12px; }
-    .footer-bottom { margin-top: 25px; }
+    footer {
+        padding: 60px 5% 30px;
+        overflow: visible !important;
+        min-height: auto;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-brand, .footer-links, .footer-socials {
+        width: 100%;
+        max-width: 100%;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+    .footer-bottom {
+        margin-top: 25px;
+        border-top: 1px solid var(--line) !important;
+        padding-top: 18px;
+        color: var(--text-muted) !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+    .footer-bottom p {
+        margin: 0;
+    }
     .footer-links a { font-size: 0.85rem; }
 }
