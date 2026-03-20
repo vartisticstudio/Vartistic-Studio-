@@ -1386,4 +1386,13 @@ footer { padding: 80px 5% 40px; background: var(--bg-card); border-top: 1px soli
     .address-bar { display: none; }
     .project-details h3 { font-size: 1.7rem; }
     .navbar { padding: 15px 5%; }
+   
+    /* Footer Responsive Fix */
+    footer { padding: 60px 5% 30px; }
+    .footer-content { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+    .footer-brand, .footer-links, .footer-socials { width: 100%; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .footer-socials { display: flex; justify-content: center; gap: 12px; }
+    .footer-bottom { margin-top: 25px; }
+    .footer-links a { font-size: 0.85rem; }
 }
