@@ -402,15 +402,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 const source = (form.id === 'contactForm' || window.location.pathname.includes('contact'))
                     ? 'contact'
                     : 'index';
-
-                const payload = {
-                    name:    normalizeField(fd.get('name')),
-                    email:   normalizeField(fd.get('email')),
-                    phone:   normalizeField(fd.get('phone')),
-                    message: normalizeField(fd.get('message')),
-                    source,
-                };
-
+// AFTER
+const serviceVal = normalizeField(fd.get('service'));
+const payload = {
+    name:    normalizeField(fd.get('name')),
+    email:   normalizeField(fd.get('email')),
+    phone:   normalizeField(fd.get('phone')),
+    message: normalizeField(fd.get('message')) || (serviceVal ? `Service interest: ${serviceVal}` : 'General enquiry'),
+    source,
+};
                 // Client-side validation (contact form only)
                 if (form.id === 'contactForm' && (!payload.name || !payload.email || !payload.message)) {
                     showFormResult(form, 'Please fill in your name, email, and message.', false);
