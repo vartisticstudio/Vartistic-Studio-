@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // HELPER: sendMail
     // ========================================================
     async function sendMail(payload) {
-        const PROD_ENDPOINT = 'https://vartiss-backend-production.up.railway.app/send-mail';
+        const PROD_ENDPOINT = 'https://backend-production-bef6.up.railway.app/send-mail';
         const LOCAL_ENDPOINTS = [
             'http://localhost:5000/send-mail',
             'http://localhost:5001/send-mail',
