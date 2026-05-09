@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Services | Vartistic Studio</title>
-    <meta name="description" content="Complete web and app services: Custom builds, Mobile Apps, Static & Dynamic sites, HTML template editing, and Python automation.">
-    <meta name="keywords" content="app development, static website, dynamic website, html template editing, website replica service, build website from scratch, python automation tools">
-    <meta property="og:title" content="Services | Builds, Apps, Clones & Automation">
-    <meta property="og:description" content="We do it all: Custom Web & App Builds, Template Edits, and Python Tools.">
+    <title>Our Services | Vartistic Studio - Web, App & Automation Solutions</title>
+    <meta name="description"
+        content="Explore our full-service development offerings: from custom web and app builds to website replicas, temple editing, and Python automation tools.">
+    <meta property="og:title" content="Our Services | Vartistic Studio">
+    <meta property="og:description" content="Custom Web & App Builds, Template Edits, and Python Automation.">
+    <meta property="og:url" content="https://www.vartisticstudio.com/services.html">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="images/Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">Vartistic<span>.</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/work">Our Work</a></li>
-                <li><a href="/services" class="active">Services</a></li>
-                <li><a href="/team">The Squad</a></li>
-                <li><a href="/contact">Contact</a></li>
+    <!-- Cinematic Video Background -->
+    <video autoplay muted loop playsinline class="fixed-video-bg">
+        <source src="Videos/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31 - LOOP - Videobolt.net.mp4"
+            type="video/mp4">
+    </video>
+
+    <nav class="navbar liquid-glass">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="font-family: var(--font-display);">Vartistic<span>.</span></a>
+
+        <!-- Center Navigation Capsule -->
+        <div class="nav-capsule" id="navCapsule">
+            <div class="nav-indicator"></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="work.html" class="nav-item">Our Work</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="team.html" class="nav-item">The Squad</a></li>
+                <!-- CTA inside mobile menu only -->
+                <li class="mobile-cta-wrapper">
+                    <a href="contact.html" class="cta-button mobile-cta">CONTACT US</a>
+                </li>
             </ul>
-            <button class="theme-btn"><span>☀️</span> Mode</button>
-            <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+        </div>
+
+        <!-- Right Side CTA (Desktop) -->
+        <a href="contact.html" class="cta-button desktop-cta">CONTACT US</a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
 
@@ -42,36 +66,67 @@
                     </span>
                     <span style="color:var(--accent); font-size:6rem;">.</span>
                 </h1>
-                <p class="crazy-subtitle">From high-performance dynamic websites to custom mobile applications. We build the future of your brand.</p>
+                <p class="crazy-subtitle">From high-performance dynamic websites to custom mobile applications. We build
+                    the future of your brand.</p>
             </div>
 
             <div class="service-list" style="margin-top: 100px;">
                 <div class="service-item" data-scroll data-scroll-speed="0.9">
-                    <div class="service-info"><h3>01 / Static & Dynamic Websites</h3><p>We build everything from lightning-fast static landing pages to complex, data-driven dynamic platforms. High performance, clean code, and zero limitations.</p></div>
+                    <div class="service-info">
+                        <h3>01 / Static & Dynamic Websites</h3>
+                        <p>We build everything from lightning-fast static landing pages to complex, data-driven dynamic
+                            platforms. High performance, clean code, and zero limitations.</p>
+                    </div>
                     <div class="service-tags"><span>Static</span><span>Dynamic</span><span>Full-Stack</span></div>
                 </div>
                 <div class="service-item" data-scroll data-scroll-speed="0.8">
-                    <div class="service-info"><h3>02 / Custom App Development</h3><p>Expand your reach with custom iOS and Android applications. We design and code mobile experiences that are smooth, intuitive, and built to scale.</p></div>
+                    <div class="service-info">
+                        <h3>02 / Custom App Development</h3>
+                        <p>Expand your reach with custom iOS and Android applications. We design and code mobile
+                            experiences that are smooth, intuitive, and built to scale.</p>
+                    </div>
                     <div class="service-tags"><span>Mobile Apps</span><span>iOS & Android</span><span>UX/UI</span></div>
                 </div>
                 <div class="service-item" data-scroll data-scroll-speed="0.7">
-                    <div class="service-info"><h3>03 / Redesign & Modernize</h3><p>We transform outdated websites into modern digital powerhouses. Better visuals, faster load times, and a UX designed to convert visitors into customers.</p></div>
-                    <div class="service-tags"><span>Modernization</span><span>Rebranding</span><span>Fast Load</span></div>
+                    <div class="service-info">
+                        <h3>03 / Redesign & Modernize</h3>
+                        <p>We transform outdated websites into modern digital powerhouses. Better visuals, faster load
+                            times, and a UX designed to convert visitors into customers.</p>
+                    </div>
+                    <div class="service-tags"><span>Modernization</span><span>Rebranding</span><span>Fast Load</span>
+                    </div>
                 </div>
                 <div class="service-item" data-scroll data-scroll-speed="0.6">
-                    <div class="service-info"><h3>04 / HTML Template Editing</h3><p>Need a professional touch on a pre-bought template? We dive into the code to customize, optimize, and strip away the bloat for a unique finish.</p></div>
-                    <div class="service-tags"><span>Custom Code</span><span>Editing</span><span>Optimization</span></div>
+                    <div class="service-info">
+                        <h3>04 / HTML Template Editing</h3>
+                        <p>Need a professional touch on a pre-bought template? We dive into the code to customize,
+                            optimize, and strip away the bloat for a unique finish.</p>
+                    </div>
+                    <div class="service-tags"><span>Custom Code</span><span>Editing</span><span>Optimization</span>
+                    </div>
                 </div>
                 <div class="service-item" data-scroll data-scroll-speed="0.5">
-                    <div class="service-info"><h3>05 / Website Replica (Cloning)</h3><p>We can build an exact, pixel-perfect replica of any high-end website you admire, tailored with your own content and powered by clean, custom code.</p></div>
+                    <div class="service-info">
+                        <h3>05 / Website Replica (Cloning)</h3>
+                        <p>We can build an exact, pixel-perfect replica of any high-end website you admire, tailored
+                            with your own content and powered by clean, custom code.</p>
+                    </div>
                     <div class="service-tags"><span>Pixel Perfect</span><span>Cloning</span><span>Replica</span></div>
                 </div>
                 <div class="service-item" data-scroll data-scroll-speed="0.4">
-                    <div class="service-info"><h3>06 / Python Automation Tools</h3><p>Automate your workflow with custom Python scripts. From data scrapers to internal business tools, we solve manual problems with automated logic.</p></div>
+                    <div class="service-info">
+                        <h3>06 / Python Automation Tools</h3>
+                        <p>Automate your workflow with custom Python scripts. From data scrapers to internal business
+                            tools, we solve manual problems with automated logic.</p>
+                    </div>
                     <div class="service-tags"><span>Python</span><span>Automation</span><span>Efficiency</span></div>
                 </div>
                 <div class="service-item" data-scroll data-scroll-speed="0.3">
-                    <div class="service-info"><h3>07 / Maintenance & Support</h3><p>We provide ongoing support to fix bugs, manage updates, and ensure your website or app stays secure 24/7. Focus on your business while we handle the tech.</p></div>
+                    <div class="service-info">
+                        <h3>07 / Maintenance & Support</h3>
+                        <p>We provide ongoing support to fix bugs, manage updates, and ensure your website or app stays
+                            secure 24/7. Focus on your business while we handle the tech.</p>
+                    </div>
                     <div class="service-tags"><span>Maintenance</span><span>Bug Fixes</span><span>Security</span></div>
                 </div>
             </div>
@@ -82,42 +137,73 @@
             <div class="faq-container">
                 <div class="faq-item" data-scroll data-scroll-speed="0.8">
                     <div class="faq-question">What is the difference between Static and Dynamic? <span>+</span></div>
-                    <div class="faq-answer">Static websites are fixed and load incredibly fast, perfect for portfolios. Dynamic websites use databases to show changing content, ideal for user logins or e-commerce.</div>
+                    <div class="faq-answer">Static websites are fixed and load incredibly fast, perfect for portfolios.
+                        Dynamic websites use databases to show changing content, ideal for user logins or e-commerce.
+                    </div>
                 </div>
                 <div class="faq-item" data-scroll data-scroll-speed="0.6">
                     <div class="faq-question">Do you develop for iOS and Android? <span>+</span></div>
-                    <div class="faq-answer">Yes, we build cross-platform applications that work seamlessly on both Apple and Android devices using high-performance frameworks.</div>
+                    <div class="faq-answer">Yes, we build cross-platform applications that work seamlessly on both Apple
+                        and Android devices using high-performance frameworks.</div>
                 </div>
                 <div class="faq-item" data-scroll data-scroll-speed="0.4">
                     <div class="faq-question">Can you edit a template I already bought? <span>+</span></div>
-                    <div class="faq-answer">Yes! We specialize in editing HTML templates via raw code to ensure they look unique and function exactly how you need them to.</div>
+                    <div class="faq-answer">Yes! We specialize in editing HTML templates via raw code to ensure they
+                        look unique and function exactly how you need them to.</div>
                 </div>
             </div>
         </section>
 
         <button class="back-to-top">↑</button>
 
-        <footer data-scroll-section>
+        <footer data-scroll-section class="liquid-glass">
             <div class="footer-content">
-                <div class="footer-brand"><h3>Vartistic Studio.</h3><p>Complete Solutions. Digital Excellence.</p></div>
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-display);">Vartistic.</h3>
+                    <p>Complete Solutions. Digital Excellence.</p>
+                </div>
                 <div class="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/work">Our Work</a>
-                    <a href="/services" class="active">Services</a>
-                    <a href="/team">The Squad</a>
-                    <a href="/contact">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="work.html">Our Work</a>
+                    <a href="services.html" class="active">Services</a>
+                    <a href="team.html">The Squad</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://www.instagram.com/vartisticstudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/vartisticstudio" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p></div>
+            <div class="footer-bottom">
+                <p>Vartistic. All Rights Reserved.</p>
+            </div>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script type="module">
+        import { animate, scroll, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@12.0.0/+esm";
+        window.Motion = { animate, scroll, stagger, inView };
+    </script>
     <script src="script.js"></script>
+    <!-- Cinematic Video Controller -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.fixed-video-bg');
+            if (video) {
+                video.playbackRate = 0.75;
+                video.addEventListener('loadeddata', function () {
+                    video.classList.add('loaded');
+                });
+                video.addEventListener('ended', function () {
+                    video.play();
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

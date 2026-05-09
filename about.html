@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Creations | Vartistic Studio</title>
+    <title>About Us | Vartistic Studio - Our Story & Mission</title>
+    <meta name="description"
+        content="Discover the story behind Vartistic Studio. We are a full-service development agency dedicated to crafting next-gen experiences with code and creativity.">
+    <meta property="og:title" content="About Us | Vartistic Studio">
+    <meta property="og:description" content="Learn about our mission and the team behind next-gen web solutions.">
+    <meta property="og:url" content="https://www.vartisticstudio.com/about.html">
     <link rel="icon" type="image/png" href="images/Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">Vartistic<span>.</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about" class="active">About Us</a></li>
-                <li><a href="/work">Our Work</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/team">The Squad</a></li>
-                <li><a href="/contact">Contact</a></li>
+    <!-- Cinematic Video Background -->
+    <video autoplay muted loop playsinline class="fixed-video-bg">
+        <source src="Videos/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31 - LOOP - Videobolt.net.mp4"
+            type="video/mp4">
+    </video>
+
+    <nav class="navbar liquid-glass">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="font-family: var(--font-display);">Vartistic<span>.</span></a>
+
+        <!-- Center Navigation Capsule -->
+        <div class="nav-capsule" id="navCapsule">
+            <div class="nav-indicator"></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="work.html" class="nav-item">Our Work</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="team.html" class="nav-item">The Squad</a></li>
+                <!-- CTA inside mobile menu only -->
+                <li class="mobile-cta-wrapper">
+                    <a href="contact.html" class="cta-button mobile-cta">CONTACT US</a>
+                </li>
             </ul>
-            <button class="theme-btn"><span>☀️</span> Mode</button>
-            <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+        </div>
+
+        <!-- Right Side CTA (Desktop) -->
+        <a href="contact.html" class="cta-button desktop-cta">CONTACT US</a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
-
+<br>
+<br>
+    <br>
+    <BR>
+        <br>
     <div id="main-container" data-scroll-container>
         <section class="work-hero-creative" data-scroll-section>
             <div class="hero-bg-dots"></div>
             <div class="work-title-box" data-scroll data-scroll-speed="2">
-                <span class="eyebrow">Vision</span>
+                <span class="eyebrow">VISION</span>
                 <h1 class="giant-text">creative<br><span class="text-gradient">impacts.</span></h1>
             </div>
         </section>
@@ -43,11 +75,15 @@
                     <div class="deep-desc">
                         <div class="desc-block">
                             <h4>The Problem</h4>
-                            <p>Manual outreach was killing our client's productivity. They needed a system that could send 10,000+ personalized emails without landing in the spam folder or costing thousands in monthly subscriptions.</p>
+                            <p>Manual outreach was killing our client's productivity. They needed a system that could
+                                send 10,000+ personalized emails without landing in the spam folder or costing thousands
+                                in monthly subscriptions.</p>
                         </div>
                         <div class="desc-block">
                             <h4>The Solution</h4>
-                            <p>A custom Python backend that mimics human typing patterns and rotates SMTP servers dynamically. It includes a built-in Excel validator that cleans the list before sending, ensuring a 98% deliverability rate.</p>
+                            <p>A custom Python backend that mimics human typing patterns and rotates SMTP servers
+                                dynamically. It includes a built-in Excel validator that cleans the list before sending,
+                                ensuring a 98% deliverability rate.</p>
                         </div>
                     </div>
                     <div class="project-tags">
@@ -56,7 +92,7 @@
                     <a href="#" class="magnetic-link">View Documentation ↗</a>
                 </div>
                 <div class="project-visual" data-scroll data-scroll-speed="1">
-                    <img src="images/Emailer UI .png" alt="Automation Engine">
+                    <img src="images/Emailer UI .png" alt="Automation Engine" loading="lazy">
                 </div>
             </div>
         </section>
@@ -64,20 +100,27 @@
         <section class="immersive-project" data-scroll-section>
             <div class="project-split">
                 <div class="project-visual" data-scroll data-scroll-speed="1">
-                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200" alt="Eatlytic">
-                    <div class="project-year">© 2025</div>
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200" alt="Eatlytic"
+                        loading="lazy">
+                    <div class="project-year">2025</div>
                 </div>
                 <div class="project-info-deep" data-scroll data-scroll-speed="0.5">
                     <span class="project-num">02</span>
-                    <h2>Eatlytic Intelligent Food Analysis Platform <br> <span class="highlight">Intelligent Food Analyzer</span></h2>
+                    <h2>Eatlytic Intelligent Food Analysis Platform <br> <span class="highlight">Intelligent Food
+                            Analyzer</span></h2>
                     <div class="deep-desc">
                         <div class="desc-block">
                             <h4>The Problem</h4>
-                            <p>Food labels are often confusing and hard to understand. In real life, people buy packaged food thinking it is healthy, but hidden ingredients, excess sugar, or misleading nutrition information make it difficult to know what we are actually consuming.</p>
+                            <p>Food labels are often confusing and hard to understand. In real life, people buy packaged
+                                food thinking it is healthy, but hidden ingredients, excess sugar, or misleading
+                                nutrition information make it difficult to know what we are actually consuming.</p>
                         </div>
                         <div class="desc-block">
                             <h4>The Solution</h4>
-                            <p>Eatlytic is an AI prototype that simplifies food transparency. Just snap a photo of a product label, and the system extracts ingredients, analyzes nutritional values, and highlights hidden health risks or benefits—helping people make smarter food choices instantly.</p>
+                            <p>Eatlytic is an AI prototype that simplifies food transparency. Just snap a photo of a
+                                product label, and the system extracts ingredients, analyzes nutritional values, and
+                                highlights hidden health risks or benefits—helping people make smarter food choices
+                                instantly.</p>
                         </div>
                     </div>
                     <div class="project-tags">
@@ -100,10 +143,13 @@
                     </div>
                     <h3>Email Automatic Sender System</h3>
                     <div class="bp-footer">
-                        <div class="tech-stack"><span>Python</span><span>SMTP</span><span>Excel Integration</span><span>Automation</span></div>
+                        <div class="tech-stack"><span>Python</span><span>SMTP</span><span>Excel
+                                Integration</span><span>Automation</span></div>
                         <div class="completion">100%</div>
                     </div>
-                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 100%;"></div></div>
+                    <div class="bp-progress-bar">
+                        <div class="bp-fill" style="width: 100%;"></div>
+                    </div>
                 </div>
                 <div class="blueprint-item" data-scroll>
                     <div class="bp-header">
@@ -112,38 +158,68 @@
                     </div>
                     <h3>Eatylytic – Intelligent Food Analyzer</h3>
                     <div class="bp-footer">
-                        <div class="tech-stack"><span>Vision API</span><span>Google Search</span><span>AI Algorithm</span></div>
+                        <div class="tech-stack"><span>Vision API</span><span>Google Search</span><span>AI
+                                Algorithm</span></div>
                         <div class="completion">60%</div>
                     </div>
-                    <div class="bp-progress-bar"><div class="bp-fill" style="width: 60%;"></div></div>
+                    <div class="bp-progress-bar">
+                        <div class="bp-fill" style="width: 60%;"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
 
         <button class="back-to-top">↑</button>
-        
-        <footer data-scroll-section>
+
+        <footer data-scroll-section class="liquid-glass">
             <div class="footer-content">
-                <div class="footer-brand"><h3>Vartistic Studio.</h3><p>Creative Minds. Obsessive Builders.</p></div>
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-display);">Vartistic.</h3>
+                    <p>Creative Minds. Obsessive Builders.</p>
+                </div>
                 <div class="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/about" class="active">About Us</a>
-                    <a href="/work">Our Work</a>
-                    <a href="/services">Services</a>
-                    <a href="/team">The Squad</a>
-                    <a href="/contact">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About Us</a>
+                    <a href="work.html">Our Work</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html">The Squad</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/vartisticstudio/" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/vartisticstudio" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com/company/vartisticstudio/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/vartisticstudio" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p></div>
+            <div class="footer-bottom">
+                <p>Vartistic. All Rights Reserved.</p>
+            </div>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script type="module">
+        import { animate, scroll, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@12.0.0/+esm";
+        window.Motion = { animate, scroll, stagger, inView };
+    </script>
     <script src="script.js"></script>
+    <!-- Cinematic Video Controller -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.fixed-video-bg');
+            if (video) {
+                video.playbackRate = 0.75;
+                video.addEventListener('loadeddata', function () {
+                    video.classList.add('loaded');
+                });
+                video.addEventListener('ended', function () {
+                    video.play();
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

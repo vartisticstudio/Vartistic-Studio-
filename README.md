@@ -1,76 +1,35 @@
-# Vartistic Studio — Build & Protection System
+# Vartistic Studio
 
-## What this does
+Welcome to the digital home of **Vartistic Studio** – a premier creative design agency. 
 
-| Layer | Tool | Effect |
-|---|---|---|
-| JS Obfuscation | `javascript-obfuscator` | Renames variables to hex, encodes strings in base64, adds dead code, self-defends against beautifiers |
-| JS Minify | `terser` | Strips whitespace, mangles names |
-| CSS Minify | `clean-css` | Removes all comments, whitespace, merges rules |
-| HTML Minify | `html-minifier-terser` | Collapses whitespace, removes comments |
-| Anti-DevTools | Injected script | Disables right-click, F12, Ctrl+U, Ctrl+Shift+I, crashes debugger |
+We specialize in crafting stunning visual experiences, building modern web applications, and delivering high-quality design solutions that elevate brands to the next level.
 
----
+## 🚀 Our Services
 
-## Setup (one-time)
+At Vartistic Studio, we offer a comprehensive suite of creative services:
+- **UI/UX Design**: Intuitive and beautiful user interfaces that captivate and engage.
+- **Brand Identity**: Cohesive and powerful branding that tells your unique story.
+- **Web Development**: High-performance, responsive websites built with modern technologies.
+- **Motion Graphics**: Dynamic animations that bring your digital presence to life.
 
-1. Copy `build.js`, `package.json` into your project root (same folder as `index.html`)
-2. Install dependencies:
-```bash
-npm install
-```
+## 🌟 Explore Our Studio
 
----
+- **Home**: Discover our agency's vision and featured highlights.
+- **About**: Learn about our story, our mission, and the passion that drives us.
+- **Services**: A detailed breakdown of the comprehensive design solutions we offer.
+- **Work**: Explore our portfolio showcasing our proudest projects and case studies.
+- **Team**: Meet the talented and creative minds behind Vartistic Studio.
+- **Contact**: Reach out to collaborate on your next big project.
 
-## Build
+## 🎨 Our Philosophy
 
-```bash
-npm run build
-# or
-node build.js
-```
+We believe that great design is not just about aesthetics; it's about solving problems and creating meaningful connections. Our team combines creativity with technical expertise to deliver solutions that are both visually stunning and highly functional. We pay meticulous attention to detail to ensure every project exceeds expectations.
 
-Output goes to `./dist/` — **deploy this folder**, not the root.
+## 📬 Contact Us
 
----
+Ready to start your next project or bring your vision to life? We'd love to hear from you!
 
-## Deploy
-
-### Netlify
-Replace your existing `netlify.toml` with the one provided.
-Netlify will auto-run `npm install && node build.js` on every push and publish `dist/`.
-
-### Vercel
-Replace your existing `vercel.json` with the one provided.
-Vercel will do the same.
-
-### Manual / cPanel / FTP
-Run `node build.js` locally, then upload the contents of `dist/` to your server.
+Explore our website or connect with our team directly.
 
 ---
-
-## What visitors see in DevTools
-
-- **HTML**: One long unreadable line, no comments, no indentation
-- **CSS**: One long compressed string
-- **JS**: Hex variable names (`_0x3f2a`), base64 encoded strings, self-defending code, active `debugger` trap that freezes DevTools
-
-## What CANNOT be hidden
-
-The browser must receive HTML/CSS/JS to render it. A very determined developer with network sniffing tools can still intercept the raw bytes. The goal of this system is to make casual copying and scraping economically not worth the effort — which it achieves very effectively.
-
-Your Flask `app.py` backend is already 100% hidden (server-side).
-
----
-
-## Adding new HTML pages
-
-Open `build.js` and add the filename to the `HTML_FILES` array:
-
-```js
-const HTML_FILES = [
-  'index.html',
-  'about.html',
-  // 'newpage.html',  ← add here
-];
-```
+*Vartistic Studio - Where vision meets creativity.*

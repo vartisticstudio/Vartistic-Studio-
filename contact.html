@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Vartistic Studio</title>
-    <meta name="description" content="Contact Vartistic Studio for custom web development, UX/UI, ecommerce builds, and technical SEO projects.">
-    <meta name="keywords" content="contact web agency, start web project, seo consultation, web design quote">
-    <meta property="og:title" content="Contact Vartistic Studio">
-    <meta property="og:description" content="Start a project: web development, UX/UI, ecommerce, and technical SEO.">
+    <title>Contact Us | Vartistic Studio - Web Development & Automation</title>
+    <meta name="description"
+        content="Reach out to Vartistic Studio for custom web development, temple editing, or Python automation solutions. Let's build your next-gen experience.">
+    <meta property="og:title" content="Contact Us | Vartistic Studio">
+    <meta property="og:description" content="Contact us for custom web and automation projects.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vartisticstudio.com/contact.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="images/Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">Vartistic<span>.</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/work">Our Work</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/team">The Squad</a></li>
-                <li><a href="/contact" class="active">Contact</a></li>
+    <!-- Cinematic Video Background (Specific for Contact) -->
+    <video autoplay muted loop playsinline class="fixed-video-bg">
+        <source src="Videos/Video_Creation_From_Image - Trim - LOOP - Videobolt.net.mp4" type="video/mp4">
+    </video>
+
+    <nav class="navbar liquid-glass">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="font-family: var(--font-display);">Vartistic<span>.</span></a>
+
+        <!-- Center Navigation Capsule -->
+        <div class="nav-capsule" id="navCapsule">
+            <div class="nav-indicator"></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="work.html" class="nav-item">Our Work</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="team.html" class="nav-item">The Squad</a></li>
+                <!-- CTA inside mobile menu only -->
+                <li class="mobile-cta-wrapper">
+                    <a href="contact.html" class="cta-button mobile-cta">CONTACT US</a>
+                </li>
             </ul>
-            <button class="theme-btn"><span>☀️</span> Mode</button>
-            <div class="hamburger">
-                <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-            </div>
+        </div>
+
+        <!-- Right Side CTA (Desktop) -->
+        <a href="contact.html" class="cta-button desktop-cta">CONTACT US</a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
 
     <div id="main-container" data-scroll-container>
         <section style="padding-top: 150px; text-align: center;" data-scroll-section>
             <h2 class="section-title" data-scroll data-scroll-speed="0.7">Start Your Project</h2>
-            <p style="margin: 0 auto 50px;" data-scroll data-scroll-speed="0.5">We are ready to bring your vision to life.</p>
+            <p style="margin: 0 auto 50px;" data-scroll data-scroll-speed="0.5">We are ready to bring your vision to
+                life.</p>
             <div class="process-steps">
                 <div class="step" data-scroll data-scroll-speed="0.9">
                     <div class="step-icon">1</div>
@@ -55,15 +77,18 @@
                     <p>We start coding your masterpiece.</p>
                 </div>
             </div>
-            <div class="hero-form-container" style="width: 100%; max-width: 600px; margin: 60px auto 0;" data-scroll data-scroll-speed="0.4">
+            <div class="hero-form-container liquid-glass" style="width: 100%; max-width: 600px; margin: 60px auto 0;"
+                data-scroll data-scroll-speed="0.4">
                 <form class="hero-form" id="contactForm" novalidate>
                     <input type="text" name="_gotcha"
                         style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;"
                         tabindex="-1" aria-hidden="true">
                     <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
-                    <div class="form-group"><input type="email" name="email" placeholder="Business Email" required></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Business Email" required>
+                    </div>
                     <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number"></div>
-                    <div class="form-group"><textarea name="message" rows="5" placeholder="Project Details..." required></textarea></div>
+                    <div class="form-group"><textarea name="message" rows="5" placeholder="Project Details..."
+                            required></textarea></div>
                     <button type="submit" class="btn-submit">Submit Enquiry</button>
                     <div class="form-result" aria-live="polite" style="margin-top:12px;"></div>
                 </form>
@@ -72,27 +97,54 @@
 
         <button class="back-to-top">↑</button>
 
-        <footer data-scroll-section>
+        <footer data-scroll-section class="liquid-glass">
             <div class="footer-content">
-                <div class="footer-brand"><h3>Vartistic Studio.</h3><p>Let's Build Your Vision Together.</p></div>
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-display);">Vartistic.</h3>
+                    <p>Let's Build Your Vision Together.</p>
+                </div>
                 <div class="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/work">Our Work</a>
-                    <a href="/services">Services</a>
-                    <a href="/team">The Squad</a>
-                    <a href="/contact" class="active">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="work.html">Our Work</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html">The Squad</a>
+                    <a href="contact.html" class="active">Contact Us</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://www.instagram.com/vartisticstudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/vartisticstudio" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p></div>
+            <div class="footer-bottom">
+                <p>Vartistic. All Rights Reserved.</p>
+            </div>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script type="module">
+        import { animate, scroll, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@12.0.0/+esm";
+        window.Motion = { animate, scroll, stagger, inView };
+    </script>
     <script src="script.js"></script>
+    <!-- Cinematic Video Controller -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.fixed-video-bg');
+            if (video) {
+                video.playbackRate = 0.75;
+                video.addEventListener('loadeddata', function () {
+                    video.classList.add('loaded');
+                });
+                video.addEventListener('ended', function () {
+                    video.play();
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

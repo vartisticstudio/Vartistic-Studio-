@@ -11,9 +11,57 @@ document.addEventListener("DOMContentLoaded", () => {
             el: scrollContainer,
             smooth: true,
             multiplier: 1,
-            tablet: { smooth: true },
-            smartphone: { smooth: true }
+            tablet: { smooth: false },
+            smartphone: { smooth: false }
         });
+
+        // ========================================================
+        // GSAP SCROLLTRIGGER PROXY FOR LOCOMOTIVE SCROLL
+        // ========================================================
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            locoScroll.on("scroll", ScrollTrigger.update);
+
+            ScrollTrigger.scrollerProxy(scrollContainer, {
+                scrollTop(value) {
+                    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+                },
+                getBoundingClientRect() {
+                    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                },
+                pinType: scrollContainer.style.transform ? "transform" : "fixed"
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+            ScrollTrigger.refresh();
+        }
+
+        // ========================================================
+        // ULTRA-RESPONSIVE GSAP NAVBAR LOGIC
+        // ========================================================
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            const handleNavScroll = (scrollY) => {
+                if (window.innerWidth <= 1024) return;
+                if (scrollY > 50) {
+                    navbar.style.height = '65px';
+                    navbar.style.top = '10px';
+                    navbar.style.boxShadow = '5px 5px 0px #000';
+                } else {
+                    navbar.style.height = '75px';
+                    navbar.style.top = '20px';
+                    navbar.style.boxShadow = '10px 10px 0px #000';
+                }
+            };
+
+            // Listen to Locomotive Scroll
+            locoScroll.on('scroll', (args) => handleNavScroll(args.scroll.y));
+
+            // Re-calc on resize
+            window.addEventListener('resize', () => {
+                if (locoScroll) handleNavScroll(locoScroll.scroll.instance.scroll.y);
+            });
+        }
     }
 
     // ========================================================
@@ -21,91 +69,203 @@ document.addEventListener("DOMContentLoaded", () => {
     // Runs only if #preloader exists in the DOM.
     // All other pages have no preloader element, so this is skipped.
     // ========================================================
+    // ========================================================
+    // 1. REVERSE MASK PRELOADER #6 — EXACT FRAMING & LOADING LOGIC
+    // ========================================================
     const preloader = document.getElementById('preloader');
-    const progress = preloader ? preloader.querySelector('.loader-progress') : null;
-    const loaderText = preloader ? preloader.querySelector('.loader-text') : null;
 
-    if (preloader && progress) {
-        // Lock scroll while preloader is active
-        document.body.style.overflow = 'hidden';
+    if (preloader && typeof gsap !== 'undefined') {
+        const loadingBar = document.querySelector('.preloader-line-active');
+        const percentageText = document.querySelector('.preloader-percentage');
+        const bgVideo = document.querySelector('.fixed-video-bg');
 
-        let count = 0;
-        const tick = setInterval(() => {
-            count = Math.min(100, count + 4);
-            progress.style.width = `${count}%`;
-            if (loaderText) loaderText.textContent = `${count}%`;
-            if (count >= 100) clearInterval(tick);
-        }, 70);
+        // VIDEO SMOOTHNESS: Slow down playback for cinematic feel
+        if (bgVideo) {
+            bgVideo.playbackRate = 0.5;
+        }
 
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-                document.body.style.overflow = ''; // Restore scroll
-                if (locoScroll) locoScroll.update();
-                animateServiceHeader();
-            }, 500);
-        }, 1800);
-    } else {
-        // No preloader on this page — init immediately
-        if (locoScroll) locoScroll.update();
-        animateServiceHeader();
-    }
-
-    // ========================================================
-    // 2. THEME TOGGLE
-    // ========================================================
-    const themeBtn = document.querySelector('.theme-btn');
-    const icon = themeBtn ? themeBtn.querySelector('span') : null;
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'light') {
-        document.body.setAttribute('data-theme', 'light');
-        if (icon) icon.textContent = '🌙';
-    }
-
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme');
-            if (currentTheme === 'light') {
-                document.body.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-                if (icon) icon.textContent = '☀️';
-            } else {
-                document.body.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                if (icon) icon.textContent = '🌙';
+        // PROGRESS SEQUENCE: Bar + Number
+        const progressTl = gsap.timeline({
+            onComplete: () => {
+                // Wait a split second at 100% for impact
+                gsap.delayedCall(0.5, startRevealAnimation);
             }
         });
+
+        // 1. Windows 'materialize' - growing from center
+        progressTl.from(".hole", {
+            attr: { height: 0, y: 50 },
+            duration: 0.6,
+            stagger: 0.05,
+            ease: "expo.out"
+        }, 0);
+
+        // 2. Bar growth & Percentage count
+        progressTl.to(loadingBar, {
+            width: "100%",
+            duration: 1.2,
+            ease: "power2.inOut"
+        }, 0.2);
+
+        progressTl.to({ val: 0 }, {
+            val: 100,
+            duration: 1.2,
+            ease: "power2.inOut",
+            onUpdate: function () {
+                if (percentageText) percentageText.textContent = Math.round(this.targets()[0].val) + "%";
+            }
+        }, 0.2);
+
+        function startRevealAnimation() {
+            const tl = gsap.timeline();
+
+            // BRAND FADE
+            tl.to(".preloader-branding, .preloader-line-container", {
+                opacity: 0,
+                duration: 0.4,
+                ease: "power2.inOut"
+            }, 0);
+
+            // STAGGERED REVEAL: Inner (2,3) UP | Outer (1,4) DOWN
+            tl.to(".hole.h2, .hole.h3", { attr: { y: -100 }, duration: 1.0, ease: "expo.inOut" }, 0.1);
+            tl.to(".hole.h1, .hole.h4", { attr: { y: 100 }, duration: 1.0, ease: "expo.inOut" }, 0.1);
+
+            // Final curtain slide
+            tl.to(preloader, {
+                y: "-100%",
+                duration: 0.8,
+                ease: "expo.inOut",
+                onComplete: () => {
+                    document.body.classList.remove("loading");
+                    preloader.style.display = "none";
+                    if (locoScroll) locoScroll.update();
+                    if (typeof animateServiceHeader === 'function') animateServiceHeader();
+                }
+            }, "-=0.6");
+        }
+    } else {
+        if (locoScroll) locoScroll.update();
+        if (typeof animateServiceHeader === 'function') animateServiceHeader();
     }
 
-    // ========================================================
-    // 3. MOBILE MENU
-    // ========================================================
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const links = document.querySelectorAll('.nav-links li');
+    // Theme toggle removed.
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
+    // ========================================================
+    // MAGNETIC MORPHING NAVIGATION
+    // ========================================================
+    const { animate, scroll: motionScroll, stagger, inView } = window.Motion || {};
 
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-                const anchor = link.querySelector('a');
-                const targetId = anchor ? anchor.getAttribute('href') : null;
-                if (targetId && targetId.startsWith('#') && locoScroll) {
-                    e.preventDefault();
-                    const targetEl = document.querySelector(targetId);
-                    if (targetEl) locoScroll.scrollTo(targetEl);
-                }
+    const initMotionInteractions = () => {
+        if (!window.Motion) return;
+
+        // 1. Feature Card Hover Effects
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            const glow = card.querySelector('.card-bg-glow');
+            const icon = card.querySelector('.icon-box');
+
+            card.addEventListener('mouseenter', () => {
+                animate(card, { scale: 1.02, y: -10 }, { duration: 0.4, ease: "easeOut" });
+                if (glow) animate(glow, { opacity: 0.8, scale: 1.2 }, { duration: 0.6 });
+                if (icon) animate(icon, { rotate: [0, -10, 10, 0], scale: 1.2 }, { duration: 0.5 });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                animate(card, { scale: 1, y: 0 }, { duration: 0.4, ease: "easeOut" });
+                if (glow) animate(glow, { opacity: 0.4, scale: 1 }, { duration: 0.6 });
+                if (icon) animate(icon, { rotate: 0, scale: 1 }, { duration: 0.5 });
+            });
+
+            // Magnetic-like subtle movement
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                animate(card, { x: x * 15, y: (y * 15) - 10 }, { duration: 0.2 });
             });
         });
+
+        // 2. Stats Section Number Pulse
+        const statBoxes = document.querySelectorAll('.stat-box');
+        statBoxes.forEach(box => {
+            const number = box.querySelector('.stat-number');
+            if (number) {
+                inView(box, () => {
+                    animate(number, { scale: [0.8, 1.1, 1], opacity: [0, 1] }, { duration: 0.8, delay: 0.2 });
+                });
+            }
+        });
+    };
+
+    if (window.Motion) {
+        initMotionInteractions();
+    } else {
+        // Fallback for if Motion loads after this script
+        window.addEventListener('load', initMotionInteractions);
     }
+
+    // initMagneticNav removed for simplicity
+
+    const initActiveLink = () => {
+        const navLinks = document.querySelectorAll('.nav-item, .footer-links a');
+        const currentPath = window.location.pathname.split("/").pop();
+
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            // Remove any hardcoded active class
+            link.classList.remove('active');
+
+            if (currentPath === linkPath) {
+                link.classList.add('active');
+            } else if ((currentPath === "" || currentPath === "index.html") && linkPath === "index.html") {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    const initMobileMenu = () => {
+        const hamburger = document.getElementById('hamburger');
+        const navLinksContainer = document.getElementById('navLinks') || document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-item');
+
+        if (hamburger && navLinksContainer) {
+            const toggleMenu = () => {
+                hamburger.classList.toggle('active');
+                navLinksContainer.classList.toggle('active');
+
+                // Clear any ghost inline styles that might be stuck
+                if (navLinksContainer.classList.contains('active')) {
+                    document.querySelectorAll('.nav-links li').forEach(li => {
+                        li.style.top = '';
+                        li.style.position = '';
+                    });
+                }
+            };
+
+            hamburger.addEventListener('click', toggleMenu);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinksContainer.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navLinksContainer.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navLinksContainer.classList.contains('active') && !navLinksContainer.contains(e.target) && !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinksContainer.classList.remove('active');
+                }
+            });
+        }
+    };
+
+    initActiveLink();
+    // initMagneticNav(); // Removed
+    initMobileMenu();
 
     // ========================================================
     // 4. BACK TO TOP
@@ -131,16 +291,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. GSAP / IntersectionObserver
     // ========================================================
     if (typeof IntersectionObserver !== 'undefined') {
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    obs.unobserve(entry.target);
                 }
             });
         });
 
-        document.querySelectorAll('.step, .service-item, .team-item').forEach(el => {
+        document.querySelectorAll('.step, .service-item').forEach(el => {
             if (!el.hasAttribute('data-scroll')) {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
@@ -182,51 +343,157 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ========================================================
-    // 8. TEAM HOVER
+    // 8. TEAM GALLERY — CIRCULAR ORBIT REVEAL (POLISHED)
     // ========================================================
-    const teamItems = document.querySelectorAll('.team-item');
-    const cursorImgContainer = document.querySelector('.cursor-img-container');
-    const cursorImg = document.querySelector('.cursor-img');
+    // ========================================================
+    // 8. TEAM GALLERY — SEAMLESS SINGLE-MOTION ORBIT
+    // ========================================================
+    const teamList = document.querySelector('.team-list');
+    if (teamList && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
-    if (teamItems.length) {
-        if (window.innerWidth > 900) {
-            teamItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    const imgUrl = item.getAttribute('data-img');
-                    if (cursorImg && imgUrl) cursorImg.src = imgUrl;
-                    if (cursorImgContainer) gsap.to(cursorImgContainer, { opacity: 1, scale: 1, duration: 0.3, ease: 'power2.out' });
-                    teamItems.forEach(other => { if (other !== item) other.style.opacity = '0.3'; });
-                });
-                item.addEventListener('mouseleave', () => {
-                    if (cursorImgContainer) gsap.to(cursorImgContainer, { opacity: 0, scale: 0.8, duration: 0.3 });
-                    teamItems.forEach(other => { other.style.opacity = '1'; });
-                });
-                item.addEventListener('mousemove', (e) => {
-                    if (cursorImgContainer) gsap.to(cursorImgContainer, { x: e.clientX, y: e.clientY, duration: 0.5, ease: 'power3.out' });
+        const teamItems = document.querySelectorAll('.team-item');
+        const teamImages = document.querySelectorAll('.team-card-img');
+        const teamHub = document.querySelector('.team-center-hub');
+        const numItems = teamItems.length;
+
+        const getOrbitRadius = () => {
+            const width = window.innerWidth;
+            const itemSize = teamItems[0]?.offsetWidth || 320;
+            const minRadius = (itemSize * numItems) / (2 * Math.PI);
+
+            if (width < 1024) {
+                const base = Math.min(width * 0.33, 230);
+                return Math.max(base, minRadius, 105);
+            }
+
+            return Math.max(380, minRadius);
+        };
+
+        const getOrbitScale = () => {
+            const width = window.innerWidth;
+            if (width < 480) return 0.7;
+            if (width < 768) return 0.75;
+            if (width < 1024) return 0.8;
+            return 0.75;
+        };
+
+        // 1. Initial Position (Off-screen Right)
+        // Note: CSS already sets them to Absolute/Centered
+        gsap.set(teamItems, {
+            x: 1000,
+            opacity: 0,
+            scale: 1
+        });
+        gsap.set(teamImages, { borderRadius: "0%" });
+
+        // 2. The Single-Motion Timeline
+        const orbitTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: teamList,
+                scroller: scrollContainer,
+                start: "top 70%",
+                toggleActions: "play none none none"
+            }
+        });
+
+        orbitTl
+            // STEP A: Slide in "Line-by-Line" (Staggered Entrance)
+            .to(teamItems, {
+                opacity: 1,
+                x: (i) => (i - (numItems - 1) / 2) * 40, // Slight horizontal spread as they arrive
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "expo.out"
+            })
+            // STEP B: Morph (Faster, while still moving)
+            .to(teamImages, {
+                borderRadius: "50%",
+                duration: 0.6,
+                ease: "power2.out"
+            }, "-=0.8")
+            // STEP C: Expand to Orbit (Directly from Row, NO STOP)
+            .to(teamItems, {
+                x: (i) => {
+                    const radius = getOrbitRadius();
+                    const angle = (i / numItems) * Math.PI * 2 - Math.PI / 2;
+                    return Math.cos(angle) * radius;
+                },
+                y: (i) => {
+                    const radius = getOrbitRadius();
+                    const angle = (i / numItems) * Math.PI * 2 - Math.PI / 2;
+                    return Math.sin(angle) * radius;
+                },
+                scale: getOrbitScale(),
+                duration: 1.8,
+                stagger: {
+                    each: 0.08,
+                    from: "center"
+                },
+                ease: "expo.inOut"
+            }, "-=0.6") // Massive overlap to ensure continuous motion
+            // STEP D: Hub Reveal (Stabilizing centerpiece)
+            .to(teamHub, {
+                opacity: 1,
+                scale: 1,
+                duration: 1.2,
+                ease: "power2.out"
+            }, "-=1.5");
+
+        // 3. Magnetic Hover (Optimized for Absolute States)
+        teamItems.forEach((item) => {
+            const overlay = item.querySelector('.team-overlay');
+            const content = item.querySelector('.team-overlay-content');
+            const img = item.querySelector('img');
+
+            item.addEventListener('mouseenter', () => {
+                gsap.to(overlay, { opacity: 1, duration: 0.4 });
+                gsap.to(img, { filter: "grayscale(100%)", duration: 0.4 });
+                gsap.to(item, { scale: 0.82, zIndex: 100, duration: 0.4, ease: "power2.out" });
+            });
+
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const xPos = e.clientX - rect.left;
+                const yPos = e.clientY - rect.top;
+
+                gsap.to(content, {
+                    x: (xPos - rect.width / 2) * 0.4,
+                    y: (yPos - rect.height / 2) * 0.4,
+                    duration: 0.6,
+                    ease: "power3.out"
                 });
             });
-        } else {
-            teamItems.forEach(item => {
-                if (!item.querySelector('.mobile-team-img')) {
-                    const imgUrl = item.getAttribute('data-img');
-                    if (imgUrl) {
-                        const img = document.createElement('img');
-                        img.src = imgUrl;
-                        img.classList.add('mobile-team-img');
-                        img.style.cssText = 'width:100%;height:250px;object-fit:cover;border-radius:10px;margin-bottom:20px;';
-                        item.insertBefore(img, item.firstChild);
-                    }
-                }
+
+            item.addEventListener('mouseleave', () => {
+                gsap.to(overlay, { opacity: 0, duration: 0.4 });
+                gsap.to(img, { filter: "grayscale(0%)", duration: 0.4 });
+                gsap.to(item, { scale: 0.75, zIndex: 10, duration: 0.4, ease: "power2.inOut" });
+                gsap.to(content, { x: 0, y: 0, duration: 0.6 });
             });
-        }
+        });
     }
+
+
+
 
     // ========================================================
     // 9. RESIZE
     // ========================================================
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        clearTimeout(window.resizeTimer);
-        window.resizeTimer = setTimeout(() => { if (locoScroll) locoScroll.update(); }, 100);
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (locoScroll) locoScroll.update();
+            // Safety: Remove scroll lock if window resized to desktop
+            if (window.innerWidth > 1024) {
+                document.body.classList.remove('no-scroll');
+                const navLinks = document.querySelector('.nav-links');
+                const hamburger = document.querySelector('.hamburger');
+                if (navLinks) navLinks.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
+            }
+        }, 100);
     });
 
     // ========================================================
@@ -268,7 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // HELPER: sendMail
     // ========================================================
     async function sendMail(payload) {
-        const PROD_ENDPOINT = 'https://backend-production-bef6.up.railway.app/send-mail';
+        const PROD_ENDPOINT = 'https://web-production-4f5a8.up.railway.app/send-mail';
         const LOCAL_ENDPOINTS = [
             'http://localhost:5000/send-mail',
             'http://localhost:5001/send-mail',
@@ -343,8 +610,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (honey) {
                     if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); if (originalText) submitBtn.innerText = originalText; }
                     form.dataset.submitting = '0';
-                    showFormResult(form, 'Message sent successfully', true);
-                    form.reset();
                     return;
                 }
 
@@ -353,7 +618,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: normalizeFieldValue(formData.get('name')),
                     email: normalizeFieldValue(formData.get('email')),
                     phone: normalizeFieldValue(formData.get('phone')),
-                    message: normalizeFieldValue(formData.get('message')),
+                    message: normalizeFieldValue(formData.get('message')), // dropdown on index, textarea on contact
+                    project: normalizeFieldValue(formData.get('project')), // textarea on index
                     source
                 };
 
@@ -404,5 +670,4 @@ document.addEventListener("DOMContentLoaded", () => {
         container.classList.add(success ? 'form-result-success' : 'form-result-error');
         container.style.color = success ? '#0a7a0a' : '#b71c1c';
     }
-
 });

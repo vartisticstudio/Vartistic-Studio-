@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vartistic Studio | Custom Web Development & Automation Agency</title>
+    <title>Vartistic Studio | Premium Web Design & Custom Solutions</title>
     <meta name="description"
         content="Vartistic Studio specializes in custom web development, HTML template editing, website replicas, 24/7 maintenance, and Python automation tools. Fast coding, real results.">
     <meta name="keywords"
@@ -35,36 +35,71 @@
         gtag('config', 'G-WQKN8PN9QV');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8280876679592716"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <!-- PRELOADER: index.html only -->
-    <div class="preloader" id="preloader">
-        <div class="loader-text">VARTISTIC</div>
-        <div class="loader-bar">
-            <div class="loader-progress"></div>
+    <!-- Cinematic Video Background -->
+    <video autoplay muted loop playsinline class="fixed-video-bg">
+        <source src="Videos/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31 - LOOP - Videobolt.net.mp4"
+            type="video/mp4">
+    </video>
+
+    <!-- PRELOADER #6: Cinematic 4-Panel Reveal -->
+    <div class="preloader" id="preloader" aria-busy="true">
+
+        <!-- SVG MASK REVEAL: Creates transparent windows in a solid background -->
+        <svg class="preloader-mask-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <mask id="hole-mask">
+                    <!-- White covers everything (Solid) -->
+                    <rect width="100" height="100" fill="white" />
+                    <!-- Black punches holes (Transparent) -->
+                    <!-- Exact Framing Layout: Pushed to edges to mirror current image -->
+                    <rect class="hole h1" x="13" y="20" width="9" height="60" fill="black" />
+                    <rect class="hole h2" x="26" y="7.5" width="8" height="85" fill="black" />
+                    <rect class="hole h3" x="65" y="7.5" width="8" height="85" fill="black" />
+                    <rect class="hole h4" x="78" y="20" width="9" height="60" fill="black" />
+                </mask>
+            </defs>
+            <!-- The Solid Background Rect -->
+            <rect width="100" height="100" fill="black" mask="url(#hole-mask)" />
+        </svg>
+
+        <div class="preloader-content">
+            <div class="preloader-branding" style="font-family: var(--font-display);">Vartistic<span>.</span></div>
+            <div class="preloader-line-container">
+                <div class="preloader-line"></div>
+                <div class="preloader-line-active"></div>
+            </div>
         </div>
     </div>
 
-    <nav class="navbar">
-        <div class="logo">Vartistic<span>.</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="#home" data-scroll-to class="active">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/work">Our Work</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/team">The Squad</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-            <button class="theme-btn"><span>☀️</span> Mode</button>
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+    <nav class="navbar liquid-glass">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="font-family: var(--font-display);">Vartistic<span>.</span></a>
+
+        <!-- Simple Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home" data-scroll-to class="nav-item">Home</a></li>
+            <li><a href="about.html" class="nav-item">About Us</a></li>
+            <li><a href="work.html" class="nav-item">Our Work</a></li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="team.html" class="nav-item">The Squad</a></li>
+            <li class="mobile-cta-wrapper">
+                <a href="contact.html" class="cta-button mobile-cta">CONTACT US</a>
+            </li>
+        </ul>
+
+        <!-- Right Side CTA (Desktop) -->
+        <a href="contact.html" class="cta-button desktop-cta">CONTACT US</a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
 
@@ -86,12 +121,12 @@
                     <strong>Python Tools</strong>. From problem-solving to rapid "Vibe Coding," we deliver results.
                 </p>
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="/services" class="cta-btn primary">View All Services</a>
-                    <a href="/work" class="cta-btn secondary">See Our Work</a>
+                    <a href="services.html" class="cta-btn primary">View All Services</a>
+                    <a href="work.html" class="cta-btn secondary">See Our Work</a>
                 </div>
             </div>
 
-            <div class="hero-form-container" data-scroll data-scroll-speed="1.5">
+            <div class="hero-form-container liquid-glass" data-scroll data-scroll-speed="1.5">
                 <form class="hero-form" novalidate>
                     <h3>Start Your Project</h3>
 
@@ -113,6 +148,9 @@
                             <option>Redesign & Fixes</option>
                             <option>Python Automation</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="project" rows="4" placeholder="Tell us about your project..."></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Let's Talk</button>
                     <div class="form-result" aria-live="polite" style="margin-top:12px;"></div>
@@ -145,7 +183,7 @@
                         <h3>Build & Redesign</h3>
                         <p>We build websites from scratch or modernize existing ones. We focus on clean code, SEO
                             rankings, and high performance.</p>
-                        <a href="/services" class="card-link">Explore Services &rarr;</a>
+                        <a href="services.html" class="card-link">Explore Services &rarr;</a>
                     </div>
                 </div>
 
@@ -160,7 +198,7 @@
                         <h3>Edits & Replicas</h3>
                         <p>Got a template? We edit it. Want a clone? We replicate it perfectly. We also offer "Vibe
                             Coding" for super-fast delivery.</p>
-                        <a href="/services" class="card-link">See Capabilities &rarr;</a>
+                        <a href="services.html" class="card-link">See Capabilities &rarr;</a>
                     </div>
                 </div>
 
@@ -175,11 +213,13 @@
                         <h3>Tools & Maintenance</h3>
                         <p>We fix bugs, maintain sites, and build Python automation tools (like our Auto-Mailer) to
                             solve real business problems.</p>
-                        <a href="/services" class="card-link">View Tools &rarr;</a>
+                        <a href="services.html" class="card-link">View Tools &rarr;</a>
                     </div>
                 </div>
 
             </div>
+        </section>
+
         </section>
 
         <section class="stats-section" data-scroll-section>
@@ -259,24 +299,24 @@
             <div data-scroll data-scroll-speed="1">
                 <h2>Need a Solution?</h2>
                 <p>From custom websites to automation tools.</p>
-                <a href="/contact" class="cta-btn primary" style="margin-top: 20px; display: inline-block;">Get
+                <a href="contact.html" class="cta-btn primary" style="margin-top: 20px; display: inline-block;">Get
                     Started</a>
             </div>
         </section>
 
-        <footer data-scroll-section>
+        <footer data-scroll-section class="liquid-glass">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Vartistic Studio.</h3>
-                    <p>Fast Code. Real Results.</p>
+                    <h3 style="font-family: var(--font-display);">Vartistic Studio<span>.</span></h3>
+                    <p>Building Digital Legacies.</p>
                 </div>
                 <div class="footer-links">
-                    <a href="/" class="active">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/work">Our Work</a>
-                    <a href="/services">Services</a>
-                    <a href="/team">The Squad</a>
-                    <a href="/contact">Contact</a>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="work.html">Our Work</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html">The Squad</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="footer-socials">
                     <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank"
@@ -286,14 +326,31 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p>
+                <p>Vartistic. All Rights Reserved.</p>
             </div>
         </footer>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script type="module">
+        import { animate, scroll, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@12.0.0/+esm";
+        window.Motion = { animate, scroll, stagger, inView };
+    </script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.fixed-video-bg');
+            if (video) {
+                video.addEventListener('loadeddata', function () {
+                    video.classList.add('loaded');
+                });
+                video.addEventListener('ended', function () {
+                    video.play();
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -4,9 +4,9 @@
   "description": "Vartistic Studio — production build toolchain",
   "scripts": {
     "build": "node build.js",
-    "prebuild": "echo '🔨 Starting Vartistic build...'"
+    "prebuild": "echo 'Starting Vartistic build...'"
   },
-  "dependencies": {
+  "devDependencies": {
     "clean-css": "^5.3.3",
     "html-minifier-terser": "^7.2.0",
     "javascript-obfuscator": "^4.1.1",

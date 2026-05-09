@@ -80,11 +80,11 @@ const CSS_OPTIONS = {
 // High protection, still functional
 const OBFUSCATOR_OPTIONS = {
   compact:                           true,
-  controlFlowFlattening:             true,
+  controlFlowFlattening:             false,
   controlFlowFlatteningThreshold:    0.5,
-  deadCodeInjection:                 true,
+  deadCodeInjection:                 false,
   deadCodeInjectionThreshold:        0.2,
-  debugProtection:                   true,   // crashes debugger
+  debugProtection:                   false,   // crashes debugger
   debugProtectionInterval:           2000,   // re-triggers every 2s
   disableConsoleOutput:              true,   // kills console.log in prod
   identifierNamesGenerator:         'hexadecimal',
@@ -191,22 +191,6 @@ function savings(original, processed) {
     }
   }
 
-  // 6. Security headers injection — add anti-devtools script to every HTML
-  const antiDevTools = `<script>!function(){document.addEventListener("contextmenu",function(e){e.preventDefault()});document.addEventListener("keydown",function(e){if(e.key==="F12"||(e.ctrlKey&&e.shiftKey&&["I","J","C","i","j","c"].includes(e.key))||(e.ctrlKey&&["u","U","s","S"].includes(e.key))){e.preventDefault();return false}});var _0x=function(){var w=window,t=+new Date;(function _l(){if(+new Date-t>100){document.body.innerHTML="<div style='display:flex;align-items:center;justify-content:center;height:100vh;background:#0e0e0e;color:#d4af37;font-family:sans-serif;font-size:2rem;'>© Vartistic Studio</div>";return}window.requestAnimationFrame(_l)})()};setInterval(function(){var s=+new Date;debugger;if(+new Date-s>100)_0x()},1500)}();</script>`;
-
-  for (const file of HTML_FILES) {
-    const destPath = path.join(DIST, file);
-    if (!fs.existsSync(destPath)) continue;
-    let html = fs.readFileSync(destPath, 'utf8');
-    // Inject right before </body>
-    if (html.includes('</body>')) {
-      html = html.replace('</body>', antiDevTools + '</body>');
-      fs.writeFileSync(destPath, html);
-    }
-  }
-  console.log('🔒  Anti-devtools script injected into all HTML files');
-
-  // 7. Write build manifest
   const manifest = {
     built:   new Date().toISOString(),
     files:   HTML_FILES,

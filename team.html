@@ -1,91 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Squad | Vartistic Studio</title>
-    <meta name="description" content="Meet the Vartistic Studio team: strategists, designers, and engineers building high-performing web experiences.">
-    <meta name="keywords" content="web agency team, web developers, ui ux designers, seo specialists">
+    <title>The Squad | Vartistic Studio - Meet Our Expert Team</title>
+    <meta name="description"
+        content="Meet the Vartistic Studio team: the strategists, designers, and engineers building the next generation of web and automation solutions.">
     <meta property="og:title" content="The Squad | Vartistic Studio">
-    <meta property="og:description" content="The strategists, designers, and engineers behind Vartistic Studio.">
+    <meta property="og:description" content="The experts behind Vartistic Studio's next-gen solutions.">
+    <meta property="og:url" content="https://www.vartisticstudio.com/team.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="images/Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body>
-    <div class="cursor-img-container"><img src="" alt="Team Member" class="cursor-img"></div>
 
-    <nav class="navbar">
-        <div class="logo">Vartistic<span>.</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/work">Our Work</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/team" class="active">The Squad</a></li>
-                <li><a href="/contact">Contact</a></li>
+<body>
+    <video autoplay muted loop playsinline class="fixed-video-bg">
+        <source src="Videos/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31 - LOOP - Videobolt.net.mp4"
+            type="video/mp4">
+    </video>
+
+    <nav class="navbar liquid-glass">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="font-family: var(--font-display);">Vartistic<span>.</span></a>
+
+        <!-- Center Navigation Capsule -->
+        <div class="nav-capsule" id="navCapsule">
+            <div class="nav-indicator"></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="work.html" class="nav-item">Our Work</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="team.html" class="nav-item">The Squad</a></li>
+                <!-- CTA inside mobile menu only -->
+                <li class="mobile-cta-wrapper">
+                    <a href="contact.html" class="cta-button mobile-cta">CONTACT US</a>
+                </li>
             </ul>
-            <button class="theme-btn"><span>☀️</span> Mode</button>
-            <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+        </div>
+
+        <!-- Right Side CTA (Desktop) -->
+        <a href="contact.html" class="cta-button desktop-cta">CONTACT US</a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
 
     <div id="main-container" data-scroll-container>
         <section class="team-header" data-scroll-section>
             <h1 data-scroll data-scroll-speed="0.7">The <span class="highlight">Architects</span><br> of the Web.</h1>
-            <p data-scroll data-scroll-speed="0.5">We are a collective of 10 obsessive creatives.</p>
+            <p data-scroll data-scroll-speed="0.5">We are a collective of 7 obsessive creatives.</p>
         </section>
 
         <section class="team-list-section" data-scroll-section>
             <div class="team-list">
-                <div class="team-item" data-scroll data-scroll-speed="0.9" data-img="images/Ritesh.png">
-                    <div class="team-index">01</div><div class="team-name">Ritesh</div><div class="team-role">UI/UX & Vibe Coder</div>
+                <!-- Central Hub for Orbit -->
+                <div class="team-center-hub">
+                    <h2>The future is<br>built on <span class="highlight italic">AI.</span></h2>
+                    <p>SCROLL TO EXPLORE</p>
                 </div>
-                <div class="team-item" data-scroll data-scroll-speed="0.7" data-img="images/Sarib.jpeg">
-                    <div class="team-index">02</div><div class="team-name">Sarib</div><div class="team-role">AI Developer</div>
+
+                <div class="team-item">
+                    <img src="images/Ritesh.png" alt="Ritesh" class="team-card-img" loading="lazy">
+                    <div class="team-overlay">
+                        <div class="team-overlay-content">
+                            <div class="team-index">01</div>
+                            <div class="team-name">Ritesh</div>
+                            <div class="team-role">UI/UX & Vibe Coder</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-item" data-scroll data-scroll-speed="0.5" data-img="images/Shoaib.png">
-                    <div class="team-index">03</div><div class="team-name">Shoaib</div><div class="team-role">Backend/Python Expert</div>
+
+                <div class="team-item">
+                    <img src="images/Sarib.jpeg" alt="Sarib" class="team-card-img" loading="lazy">
+                    <div class="team-overlay">
+                        <div class="team-overlay-content">
+                            <div class="team-index">02</div>
+                            <div class="team-name">Sarib</div>
+                            <div class="team-role">AI Developer</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-item" data-scroll data-scroll-speed="0.4" data-img="images/Rohit.png">
-                    <div class="team-index">04</div><div class="team-name">Rohit</div><div class="team-role">Wordpress/App Dev</div>
+
+                <div class="team-item">
+                    <img src="images/Shoaib.png" alt="Shoaib" class="team-card-img" loading="lazy">
+                    <div class="team-overlay">
+                        <div class="team-overlay-content">
+                            <div class="team-index">03</div>
+                            <div class="team-name">Shoaib</div>
+                            <div class="team-role">Backend/Python Expert</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-item" data-scroll data-scroll-speed="0.3" data-img="images/Laksh.png">
-                    <div class="team-index">05</div><div class="team-name">Laksh</div><div class="team-role">App dev</div>
+
+                <div class="team-item">
+                    <img src="images/Rohit.png" alt="Rohit" class="team-card-img" loading="lazy">
+                    <div class="team-overlay">
+                        <div class="team-overlay-content">
+                            <div class="team-index">04</div>
+                            <div class="team-name">Rohit</div>
+                            <div class="team-role">Wordpress/App Dev</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-item" data-scroll data-scroll-speed="0.3" data-img="images/Saad.png">
-                    <div class="team-index">06</div><div class="team-name">Saad</div><div class="team-role">Cyber Security Expert</div>
+
+                <div class="team-item">
+                    <img src="images/Saad.png" alt="Saad" class="team-card-img" loading="lazy">
+                    <div class="team-overlay">
+                        <div class="team-overlay-content">
+                            <div class="team-index">05</div>
+                            <div class="team-name">Saad</div>
+                            <div class="team-role">Cyber Security Expert</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-item">
+                    <img src="images/Renuka.png" alt="Renuka" class="team-card-img" loading="lazy">
+                    <div class="team-overlay">
+                        <div class="team-overlay-content">
+                            <div class="team-index">06</div>
+                            <div class="team-name">Renuka</div>
+                            <div class="team-role">Communicator</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-item">
+                    <img src="images/Owais.png" alt="Owais" class="team-card-img" loading="lazy">
+                    <div class="team-overlay">
+                        <div class="team-overlay-content">
+                            <div class="team-index">07</div>
+                            <div class="team-name">Owais</div>
+                            <div class="team-role">Social Media Handler</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <button class="back-to-top">↑</button>
 
-        <footer data-scroll-section>
+        <footer data-scroll-section class="liquid-glass">
             <div class="footer-content">
-                <div class="footer-brand"><h3>Vartistic Studio.</h3><p>Creative Minds. Obsessive Builders.</p></div>
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-display);">Vartistic.</h3>
+                    <p>Creative Minds. Obsessive Builders.</p>
+                </div>
                 <div class="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/work">Our Work</a>
-                    <a href="/services">Services</a>
-                    <a href="/team" class="active">The Squad</a>
-                    <a href="/contact">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="work.html">Our Work</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html" class="active">The Squad</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://www.instagram.com/vartisticstudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/company/vartisticstudio/?viewAsMember=true" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/vartisticstudio" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p></div>
+            <div class="footer-bottom">
+                <p>Vartistic Studio. All Rights Reserved.</p>
+            </div>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script type="module">
+        import { animate, scroll, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@12.0.0/+esm";
+        window.Motion = { animate, scroll, stagger, inView };
+    </script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.fixed-video-bg');
+            if (video) {
+                video.playbackRate = 0.75;
+                video.addEventListener('loadeddata', function () {
+                    video.classList.add('loaded');
+                });
+                video.addEventListener('ended', function () {
+                    video.play();
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

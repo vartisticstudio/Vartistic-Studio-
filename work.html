@@ -1,193 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Work | Vartistic Studio Portfolio</title>
-    <meta name="description" content="Explore live websites delivered by Vartistic Studio. From Luxury E-commerce to Fitness UI and Travel Booking Engines.">
+    <title>Our Work | Vartistic Studio - Portfolio of Web & Automation Projects</title>
+    <meta name="description"
+        content="Explore our portfolio of luxury e-commerce, fitness UI, travel booking engines, and video automation tools. See how Vartistic Studio delivers real results.">
+    <meta property="og:title" content="Our Work Portfolio | Vartistic Studio">
+    <meta property="og:description" content="See our latest web development and automation projects.">
+    <meta property="og:url" content="https://www.vartisticstudio.com/work.html">
     <link rel="icon" type="image/png" href="images/Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">Vartistic<span>.</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/work" class="active">Our Work</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/team">The Squad</a></li>
-                <li><a href="/contact">Contact</a></li>
+    <video autoplay muted loop playsinline class="fixed-video-bg">
+        <source src="Videos/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31 - LOOP - Videobolt.net.mp4"
+            type="video/mp4">
+    </video>
+
+    <nav class="navbar liquid-glass">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="font-family: var(--font-display);">Vartistic<span>.</span></a>
+
+        <!-- Center Navigation Capsule -->
+        <div class="nav-capsule" id="navCapsule">
+            <div class="nav-indicator"></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="work.html" class="nav-item">Our Work</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="team.html" class="nav-item">The Squad</a></li>
+                <!-- CTA inside mobile menu only -->
+                <li class="mobile-cta-wrapper">
+                    <a href="contact.html" class="cta-button mobile-cta">CONTACT US</a>
+                </li>
             </ul>
-            <button class="theme-btn"><span>☀️</span> Mode</button>
-            <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+        </div>
+
+        <!-- Right Side CTA (Desktop) -->
+        <a href="contact.html" class="cta-button desktop-cta">CONTACT US</a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
 
     <div id="main-container" data-scroll-container>
 
-        <section class="portfolio-hero" data-scroll-section>
-            <div class="hero-bg-dots"></div>
-            <div class="work-title-box" data-scroll data-scroll-speed="1.2">
-                <span class="eyebrow">PUBLISHED WORKS</span>
-                <h1 class="giant-text">Digital<br><span class="text-gradient">Success.</span></h1>
+        <section class="work-hero-cinematic" data-scroll-section>
+            <div class="work-hero-bg-lines"></div>
+            <div class="work-hero-content" data-scroll data-scroll-speed="1.5">
+                <span class="work-hero-label">Selected Work</span>
+                <h1 class="work-hero-title">We Build<br><span class="text-gradient">Digital Impact.</span></h1>
+                <p class="work-hero-sub">Every project is a story of transformation. Here are the ones we're most proud
+                    of.</p>
+            </div>
+            <div class="work-hero-stats" data-scroll data-scroll-speed="0.8">
+                <div class="work-stat">
+                    <span class="work-stat-num" data-count="12">0</span>
+                    <span class="work-stat-label">Projects Delivered</span>
+                </div>
+                <div class="work-stat-divider"></div>
+                <div class="work-stat">
+                    <span class="work-stat-num" data-count="98">0</span>
+                    <span class="work-stat-label">Client Satisfaction %</span>
+                </div>
+                <div class="work-stat-divider"></div>
+                <div class="work-stat">
+                    <span class="work-stat-num" data-count="4">0</span>
+                    <span class="work-stat-label">Industries Served</span>
+                </div>
+            </div>
+            <div class="work-scroll-hint" data-scroll data-scroll-speed="0.5">
+                <span>Scroll to explore</span>
+                <div class="work-scroll-arrow"></div>
             </div>
         </section>
 
-        <section class="live-work-section" data-scroll-section>
-            <div class="container" style="padding: 0 5%;">
-              
-                <div class="portfolio-item-wrapper" data-scroll data-scroll-speed="0.8">
-                    <div class="browser-window">
-                        <div class="browser-header">
-                            <div class="dots"><span></span><span></span><span></span></div>
-                            <div class="address-bar">ambaraerobicsfitness.com/</div>
+        <section class="work-featured" data-scroll-section>
+            <div class="work-section-header" data-scroll data-scroll-speed="0.5">
+                <span class="work-section-label">01 / Featured Project</span>
+                <h2 class="work-section-title">Ambar Aerobics</h2>
+                <p class="work-section-desc">A high-energy fitness brand that needed a website as dynamic as their
+                    workouts.</p>
+            </div>
+
+            <div class="work-showcase" data-scroll data-scroll-speed="0.3">
+                <div class="work-showcase-visual">
+                    <div class="work-showcase-frame">
+                        <div class="work-browser-bar">
+                            <div class="work-browser-dots"><span></span><span></span><span></span></div>
+                            <div class="work-browser-url">ambaraerobicsfitness.com</div>
                         </div>
-                        <div class="browser-content">
-                            <video autoplay muted loop playsinline class="project-video">
+                        <div class="work-showcase-media">
+                            <video autoplay muted loop playsinline>
                                 <source src="Videos/Ambar_Aerobics.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
-                    <div class="project-details">
-                        <div class="badge-row"><span class="work-badge">Fitness UI</span><span class="work-badge">Lead Gen</span></div>
-                        <h3>Ambar Aerobics</h3>
-                        <p>Energy-driven fitness identity. We built a high-retention Multi-Pages Website funnel for membership acquisition.</p>
-                        <div class="highlight-box"><strong>Vartistic Strategy:</strong> Interactive SVG graphics designed for perfect clarity on 4K and mobile screens.</div>
-                        <a href="https://ambaraerobicsfitness.com/" target="_blank" class="theme-circle-btn"><span>↗</span></a>
-                    </div>
                 </div>
-               
-
-                
-                <div class="portfolio-item-wrapper reverse" data-scroll data-scroll-speed="1.1">
-                    <div class="browser-window">
-                        <div class="browser-header">
-                            <div class="dots"><span></span><span></span><span></span></div>
-                            <div class="address-bar">nszgoaride.com/</div>
+                <div class="work-showcase-info">
+                    <div class="work-showcase-meta">
+                        <span class="work-tag">Fitness UI</span>
+                        <span class="work-tag">Lead Generation</span>
+                        <span class="work-tag">Multi-Page</span>
+                    </div>
+                    <h3 class="work-showcase-heading">Fitness Identity &<br>Membership Funnel</h3>
+                    <p class="work-showcase-text">We designed a multi-page website that captures the energy of Ambar
+                        Aerobics. Every section is built to convert visitors into members — from the bold hero to the
+                        seamless class showcase.</p>
+                    <div class="work-results">
+                        <div class="work-result">
+                            <span class="work-result-value">+40%</span>
+                            <span class="work-result-label">Engagement Lift</span>
                         </div>
-                        <div class="browser-content">
-                            <video autoplay muted loop playsinline class="project-video">
+                        <div class="work-result">
+                            <span class="work-result-value">4K</span>
+                            <span class="work-result-label">SVG Clarity</span>
+                        </div>
+                        <div class="work-result">
+                            <span class="work-result-value">100%</span>
+                            <span class="work-result-label">Mobile Optimized</span>
+                        </div>
+                    </div>
+                    <a href="https://ambaraerobicsfitness.com/" target="_blank" rel="noopener noreferrer"
+                        class="work-live-link">
+                        <span>Visit Live Site</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-featured work-featured-alt" data-scroll-section>
+            <div class="work-section-header" data-scroll data-scroll-speed="0.5">
+                <span class="work-section-label">02 / Featured Project</span>
+                <h2 class="work-section-title">NSZ Goa Ride</h2>
+                <p class="work-section-desc">A tourism platform built for speed, simplicity, and one-tap bookings on
+                    mobile.</p>
+            </div>
+
+            <div class="work-showcase work-showcase-reverse" data-scroll data-scroll-speed="0.3">
+                <div class="work-showcase-visual">
+                    <div class="work-showcase-frame">
+                        <div class="work-browser-bar">
+                            <div class="work-browser-dots"><span></span><span></span><span></span></div>
+                            <div class="work-browser-url">nszgoaride.com</div>
+                        </div>
+                        <div class="work-showcase-media">
+                            <video autoplay muted loop playsinline>
                                 <source src="Videos/NSZ_Goa_Ride.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
-                    <div class="project-details">
-                        <div class="badge-row"><span class="work-badge">Tourism Platform</span><span class="work-badge">UI Architecture</span></div>
-                        <h3>NSZ Goa Ride</h3>
-                        <p>A robust tourism ecosystem. We optimized the UI for rapid "One-Tap" mobile booking for travelers.</p>
-                        <div class="highlight-box"><strong>Vartistic Strategy:</strong> Lightweight code architecture to ensure fast performance on mobile data networks.</div>
-                        <a href="http://nszgoaride.com/" target="_blank" class="theme-circle-btn"><span>↗</span></a>
-                    </div>
                 </div>
-
-
-                               
-                <div class="portfolio-item-wrapper " data-scroll data-scroll-speed="1.1">
-                    <div class="browser-window">
-                        <div class="browser-header">
-                            <div class="dots"><span></span><span></span><span></span></div>
-                            <div class="address-bar">royalgoaride.com/</div>
+                <div class="work-showcase-info">
+                    <div class="work-showcase-meta">
+                        <span class="work-tag">Tourism</span>
+                        <span class="work-tag">Booking UI</span>
+                        <span class="work-tag">Mobile-First</span>
+                    </div>
+                    <h3 class="work-showcase-heading">One-Tap Travel<br>Booking Experience</h3>
+                    <p class="work-showcase-text">Travelers don't want to think — they want to book. We stripped away
+                        every unnecessary click and built a lightweight, lightning-fast booking flow that works
+                        flawlessly on mobile data networks.</p>
+                    <div class="work-results">
+                        <div class="work-result">
+                            <span class="work-result-value">3x</span>
+                            <span class="work-result-label">Faster Load Time</span>
                         </div>
-                        <div class="browser-content">
-                            <video autoplay muted loop playsinline class="project-video">
+                        <div class="work-result">
+                            <span class="work-result-value">-60%</span>
+                            <span class="work-result-label">Bounce Rate</span>
+                        </div>
+                        <div class="work-result">
+                            <span class="work-result-value">1-Tap</span>
+                            <span class="work-result-label">Booking Flow</span>
+                        </div>
+                    </div>
+                    <a href="http://nszgoaride.com/" target="_blank" rel="noopener noreferrer" class="work-live-link">
+                        <span>Visit Live Site</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-featured" data-scroll-section>
+            <div class="work-section-header" data-scroll data-scroll-speed="0.5">
+                <span class="work-section-label">03 / Featured Project</span>
+                <h2 class="work-section-title">Royal Goa Ride</h2>
+                <p class="work-section-desc">A premium rental platform engineered to dominate local search rankings.</p>
+            </div>
+
+            <div class="work-showcase" data-scroll data-scroll-speed="0.3">
+                <div class="work-showcase-visual">
+                    <div class="work-showcase-frame">
+                        <div class="work-browser-bar">
+                            <div class="work-browser-dots"><span></span><span></span><span></span></div>
+                            <div class="work-browser-url">royalgoaride.com</div>
+                        </div>
+                        <div class="work-showcase-media">
+                            <video autoplay muted loop playsinline>
                                 <source src="Videos/Royal_Goa_Ride.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
-                    <div class="project-details">
-                        <div class="badge-row"><span class="work-badge">Booking Engine</span><span class="work-badge">SEO Focus</span></div>
-                        <h3>Royal Goa Ride</h3>
-                        <p>A top-tier rental platform. We engineered a seamless booking funnel to drive localized tourist traffic.</p>
-                        <div class="highlight-box"><strong>Vartistic Strategy:</strong> Advanced Technical SEO ranking the brand on Page 1 for Goa rental keywords.</div>
-                        <a href="https://royalgoaride.com/" target="_blank" class="theme-circle-btn"><span>↗</span></a>
-                    </div>
                 </div>
-                
-
-                
-
-                <div class="portfolio-item-wrapper reverse" data-scroll data-scroll-speed="0.8">
-                    <div class="browser-window">
-                        <div class="browser-header">
-                            <div class="dots"><span></span><span></span><span></span></div>
-                            <div class="address-bar">brainboxmedia.in/</div>
+                <div class="work-showcase-info">
+                    <div class="work-showcase-meta">
+                        <span class="work-tag">Booking Engine</span>
+                        <span class="work-tag">Technical SEO</span>
+                        <span class="work-tag">Premium UX</span>
+                    </div>
+                    <h3 class="work-showcase-heading">SEO-Driven Rental<br>Platform</h3>
+                    <p class="work-showcase-text">We didn't just build a beautiful site — we engineered it to rank.
+                        Advanced technical SEO, structured data, and performance optimization put Royal Goa Ride on Page
+                        1 for key Goa rental searches.</p>
+                    <div class="work-results">
+                        <div class="work-result">
+                            <span class="work-result-value">#1</span>
+                            <span class="work-result-label">Page 1 Ranking</span>
                         </div>
-                        <div class="browser-content">
-                            <video autoplay muted loop playsinline class="project-video">
+                        <div class="work-result">
+                            <span class="work-result-value">+85%</span>
+                            <span class="work-result-label">Organic Traffic</span>
+                        </div>
+                        <div class="work-result">
+                            <span class="work-result-value">&lt;2s</span>
+                            <span class="work-result-label">Load Time</span>
+                        </div>
+                    </div>
+                    <a href="https://royalgoaride.com/" target="_blank" rel="noopener noreferrer"
+                        class="work-live-link">
+                        <span>Visit Live Site</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-featured work-featured-alt" data-scroll-section>
+            <div class="work-section-header" data-scroll data-scroll-speed="0.5">
+                <span class="work-section-label">04 / Featured Project</span>
+                <h2 class="work-section-title">Brain Box Media</h2>
+                <p class="work-section-desc">A B2B brand that needed a credibility boost through strategic component
+                    engineering.</p>
+            </div>
+
+            <div class="work-showcase work-showcase-reverse" data-scroll data-scroll-speed="0.3">
+                <div class="work-showcase-visual">
+                    <div class="work-showcase-frame">
+                        <div class="work-browser-bar">
+                            <div class="work-browser-dots"><span></span><span></span><span></span></div>
+                            <div class="work-browser-url">brainboxmedia.in</div>
+                        </div>
+                        <div class="work-showcase-media">
+                            <video autoplay muted loop playsinline>
                                 <source src="Videos/Brain_Box_Media.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
-                    <div class="project-details">
-                        <div class="badge-row"><span class="work-badge">Component Engineering</span><span class="work-badge">B2B Trust</span></div>
-                        <h3>Brain Box Media</h3>
-                        <p>Strategic brand enhancement. We engineered a high-performance "Our Partners" component to improve B2B credibility.</p>
-                        <div class="highlight-box"><strong>Vartistic Strategy:</strong> Custom CSS-Grid optimization to handle dynamic logo scaling without performance loss.</div>
-                        <a href="https://www.brainboxmedia.in/" target="_blank" class="theme-circle-btn"><span>↗</span></a>
-                    </div>
                 </div>
-
-            </div>
-        </section>
-
-        <section class="template-section" data-scroll-section>
-            <div class="container" style="padding: 0 5%;">
-                <h2 class="section-title" data-scroll data-scroll-speed="0.5">The <span class="highlight">Vault</span></h2>
-                <div class="template-grid">
-                    <div class="template-card">
-                        <div class="template-thumb">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt="Template">
-                            <div class="template-hover"><a href="#" class="cta-btn primary">Coming Soon</a></div>
+                <div class="work-showcase-info">
+                    <div class="work-showcase-meta">
+                        <span class="work-tag">B2B</span>
+                        <span class="work-tag">Component Design</span>
+                        <span class="work-tag">CSS Grid</span>
+                    </div>
+                    <h3 class="work-showcase-heading">B2B Trust &<br>Partner Showcase</h3>
+                    <p class="work-showcase-text">Brain Box Media needed to prove their credibility at a glance. We
+                        engineered a dynamic "Our Partners" component with custom CSS-Grid optimization that handles
+                        logo scaling beautifully across all screen sizes — zero performance loss.</p>
+                    <div class="work-results">
+                        <div class="work-result">
+                            <span class="work-result-value">0ms</span>
+                            <span class="work-result-label">Layout Shift</span>
                         </div>
-                        <div class="template-info">
-                            <div class="tp-meta"><span class="tp-ver">TECH</span> <span class="tp-price">₹10,000</span></div>
-                            <h4>Classes Template</h4>
-                            <p>A Template That You Can Use For Your Upcoming Classes Projects.</p>
+                        <div class="work-result">
+                            <span class="work-result-value">Dynamic</span>
+                            <span class="work-result-label">Logo Scaling</span>
+                        </div>
+                        <div class="work-result">
+                            <span class="work-result-value">A+</span>
+                            <span class="work-result-label">Lighthouse Score</span>
                         </div>
                     </div>
-                    <div class="template-card">
-                        <div class="template-thumb">
-                            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800" alt="Template">
-                            <div class="template-hover"><a href="#" class="cta-btn primary">Coming Soon</a></div>
-                        </div>
-                        <div class="template-info">
-                            <div class="tp-meta"><span class="tp-ver">E-commerce</span> <span class="tp-price">₹20,000</span></div>
-                            <h4>E-commerce Furniture </h4>
-                            <p>E-Commerce Website Ready To Use Template</p>
-                        </div>
-                    </div>
+                    <a href="https://www.brainboxmedia.in/" target="_blank" rel="noopener noreferrer"
+                        class="work-live-link">
+                        <span>Visit Live Site</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!--
+        <section class="work-featured" data-scroll-section>
+            <div class="work-section-header" data-scroll data-scroll-speed="0.5">
+                <span class="work-section-label">05 / Featured Project</span>
+                <h2 class="work-section-title">Video Text Removal</h2>
+                <p class="work-section-desc">An AI-powered solution for content creators and brands to clean up visual
+                    assets and protect identity.</p>
+            </div>
 
+            <div class="work-showcase" data-scroll data-scroll-speed="0.3">
+                <div class="work-showcase-visual">
+                    <div class="work-showcase-frame">
+                        <div class="work-browser-bar">
+                            <div class="work-browser-dots"><span></span><span></span><span></span></div>
+                            <div class="work-browser-url">video-editor.vartistic.com</div>
+                        </div>
+                        <div class="work-showcase-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="Videos/Video_Creation_From_Image - Trim - LOOP - Videobolt.net.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-showcase-info">
+                    <div class="work-showcase-meta">
+                        <span class="work-tag">AI Processing</span>
+                        <span class="work-tag">Content Protection</span>
+                        <span class="work-tag">Clean UI</span>
+                    </div>
+                    <h3 class="work-showcase-heading">Intelligent Visual<br>Content Restoration</h3>
+                    <p class="work-showcase-text">We built a custom processing engine that identifies and removes
+                        unwanted text or logos from videos without compromising the underlying pixels. Perfect for
+                        creators repurposing content across platforms.</p>
+                    <div class="work-results">
+                        <div class="work-result">
+                            <span class="work-result-value">100%</span>
+                            <span class="work-result-label">Privacy Shield</span>
+                        </div>
+                        <div class="work-result">
+                            <span class="work-result-value">&lt;24h</span>
+                            <span class="work-result-label">Express Delivery</span>
+                        </div>
+                        <div class="work-result">
+                            <span class="work-result-value">Clean</span>
+                            <span class="work-result-label">Restoration</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="work-live-link">
+                        <span>Enquire for Service</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <section class="work-templates" data-scroll-section>
+            <div class="work-templates-header" data-scroll data-scroll-speed="0.5">
+                <span class="work-section-label">Ready-Made</span>
+                <h2 class="work-section-title">The <span class="highlight">Vault</span></h2>
+                <p class="work-section-desc">Premium templates ready to deploy. Pick one, customize it, launch fast.</p>
+            </div>
+            <div class="vault-grid">
+                <div class="vault-card" data-scroll data-scroll-speed="0.3">
+                    <div class="vault-card-visual">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
+                            alt="Classes Template" loading="lazy">
+                        <div class="vault-card-overlay">
+                            <span class="vault-badge">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="vault-card-body">
+                        <div class="vault-card-tags">
+                            <span class="work-tag">Classes</span>
+                            <span class="work-tag">Education</span>
+                        </div>
+                        <h4>Classes & Courses Template</h4>
+                        <p>A polished, conversion-ready template for online classes and course platforms.</p>
+                        <div class="vault-card-footer">
+                            <span class="vault-price">₹10,000</span>
+                            <a href="contact.html" class="vault-cta">Get Early Access</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="vault-card" data-scroll data-scroll-speed="0.5">
+                    <div class="vault-card-visual">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800"
+                            alt="E-commerce Template" loading="lazy">
+                        <div class="vault-card-overlay">
+                            <span class="vault-badge">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="vault-card-body">
+                        <div class="vault-card-tags">
+                            <span class="work-tag">E-commerce</span>
+                            <span class="work-tag">Furniture</span>
+                        </div>
+                        <h4>Furniture E-commerce Template</h4>
+                        <p>A sleek, product-first template designed for furniture and home decor brands.</p>
+                        <div class="vault-card-footer">
+                            <span class="vault-price">₹20,000</span>
+                            <a href="contact.html" class="vault-cta">Get Early Access</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        <section class="work-cta" data-scroll-section>
+            <div class="work-cta-inner" data-scroll data-scroll-speed="0.5">
+                <span class="work-cta-label">Ready for your project?</span>
+                <h2 class="work-cta-title">Let's Build<br>Something <span class="text-gradient">Great.</span></h2>
+                <p class="work-cta-text">Whether it's a scratch build, a redesign, or a complete platform — we're ready
+                    to deliver.</p>
+                <div class="work-cta-actions">
+                    <a href="contact.html" class="cta-btn primary">Start Your Project</a>
+                    <a href="services.html" class="cta-btn secondary">View Services</a>
+                </div>
+            </div>
+        </section>
+-->
         <button class="back-to-top">↑</button>
-        
-        <footer data-scroll-section>
+
+        <footer data-scroll-section class="liquid-glass">
             <div class="footer-content">
-                <div class="footer-brand"><h3>Vartistic Studio.</h3><p>Fast Code. Real Results.</p></div>
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-display);">Vartistic.</h3>
+                    <p>Fast Code. Real Results.</p>
+                </div>
                 <div class="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/work" class="active">Our Work</a>
-                    <a href="/services">Services</a>
-                    <a href="/team">The Squad</a>
-                    <a href="/contact">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="work.html" class="active">Our Work</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html">The Squad</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/vartisticstudio/" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/vartisticstudio" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com/company/vartisticstudio/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/vartisticstudio" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Vartistic Studio. All Rights Reserved.</p></div>
+            <div class="footer-bottom">
+                <p>Vartistic. All Rights Reserved.</p>
+            </div>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script type="module">
+        import { animate, scroll, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@12.0.0/+esm";
+        window.Motion = { animate, scroll, stagger, inView };
+    </script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.fixed-video-bg');
+            if (video) {
+                video.playbackRate = 0.75;
+                video.addEventListener('loadeddata', function () {
+                    video.classList.add('loaded');
+                });
+                video.addEventListener('ended', function () {
+                    video.play();
+                });
+            }
+
+            const statNums = document.querySelectorAll('.work-stat-num[data-count]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-count'));
+                        let current = 0;
+                        const step = Math.max(1, Math.floor(target / 40));
+                        const interval = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(interval);
+                            }
+                            el.textContent = current;
+                        }, 30);
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statNums.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
+
 </html>
